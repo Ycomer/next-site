@@ -64,8 +64,11 @@ const Blockquote = ({ children }) => (
         padding: 1rem 1.25rem;
         background: #f7f7f7;
       }
-      blockquote :global(p) {
-        margin: 0;
+      blockquote :global(p:first-child) {
+        margin-top: 0;
+      }
+      blockquote :global(p:last-child) {
+        margin-bottom: 0;
       }
     `}</style>
   </blockquote>
@@ -105,7 +108,7 @@ const InlineCode = ({ children }) => (
     <style jsx>{`
       code {
         color: rgb(212, 0, 255);
-        font-size: 0.9em;
+        font-size: 0.875em;
         white-space: pre-wrap;
       }
       code::before {
@@ -113,6 +116,10 @@ const InlineCode = ({ children }) => (
       }
       code::after {
         content: '\`';
+      }
+
+      :global(a) code {
+        color: inherit;
       }
     `}</style>
   </code>

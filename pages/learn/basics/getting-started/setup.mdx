@@ -6,83 +6,51 @@ export const meta = {
   lessonId: 'getting-started',
   stepId: 'setup',
   question: {
-    answers: ['404 - This page could not be found', 'Hello Next.js'],
-    correctAnswer: 'Hello Next.js'
+    answers: ['Welcome to Next.js!', 'Hello Next.js!'],
+    correctAnswer: 'Welcome to Next.js!'
   }
 };
 
 ## Setup
 
-Here’s the system requirements for this tutorial:
+First, let’s make sure that your development environment is ready.
 
-- [Node.js](https://nodejs.org/) 10 or later
-- Your favorite text editor and terminal
+- If you don’t have **Node.js** installed, [install it from here](https://nodejs.org/en/). You’ll need Node.js version **10** or later.
+- You’ll be using your own text editor and terminal app for this tutorial.
 
-macOS, Windows (including WSL), and Linux are all supported.
+> If you are on Windows, we recommend [downloading Git for Windows](https://gitforwindows.org/) and use Git Bash that comes with it, which supports the UNIX-specific commands in this tutorial.
 
-> If you are on Windows, try to use PowerShell or Git Bash (Comes with [git](https://git-scm.com/downloads)). Here’s why: Next.js works with any shell or terminal, but we'll be using some UNIX-specific commands in this guide.
+### Create a Next.js app
 
-### Step 1: Create files
-
-First, we will:
-
-- Create and move into the `hello-next` directory
-- Use `npm` to create `package.json` and install `react`, `react-dom`, and `next`
-- Create `index.js` under the `pages` directory
-
-Run these commands in order:
+To create a Next.js app, open your terminal, `cd` into the directory you’d like to create the app in, and run the following command:
 
 ```bash
-mkdir hello-next
-cd hello-next
-npm init -y
-npm install --save react react-dom next
-mkdir pages
-touch pages/index.js
+npm init next-app my-app
 ```
 
-> If you prefer [Yarn](https://yarnpkg.com/), you can use `yarn add` instead of `npm install --save`.
+> If you prefer [Yarn](https://yarnpkg.com/), you can replace `npm init` with `yarn create`.
+>
+> Under the hood, this uses the tool called `create-next-app`, which bootstraps a Next.js app for you (similar to [Create React App](https://create-react-app.dev/)).
 
-### Step 2: Create a page component
+### Run the development server
 
-Next, open `index.js` in the `pages` directory inside `hello-next` and add the following:
+You now have a new directory called `my-app`. Let’s `cd` into it:
 
-```jsx
-const Index = () => <h1>Hello Next.js</h1>;
-
-export default Index;
+```bash
+cd my-app
 ```
 
-This is a simple React component that displays <strong>Hello Next.js</strong> in `<h1>` tag.
-
-### Step 3: Set up scripts
-
-Finally, open `package.json` in the `hello-next` directory and replace the contents of `scripts` with the following:
-
-```json
-"scripts": {
-  "dev": "next",
-  "build": "next build",
-  "start": "next start"
-},
-```
-
-This adds the following commands:
-
-- `npm run dev`: Start the development server. You’ll use this often!
-- `npm run build`: Build the project for production.
-- `npm run start`: Start the production server.
-
-### Running Next.js
-
-Run the following command to start the development server:
+Then, run the following command:
 
 ```bash
 npm run dev
 ```
 
-Then open [http://localhost:3000](http://localhost:3000/) from your browser.
+> If you prefer [Yarn](https://yarnpkg.com/), you can use `yarn dev` instead.
 
-What's the output you see on the screen?
+This starts your Next.js app’s "development server" (more on this later) on port **3000**. Let’s check to see if it’s working.
+
+- Open [http://localhost:3000](http://localhost:3000) from your browser.
+- Question: What text do you see on the page?
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
