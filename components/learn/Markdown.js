@@ -7,7 +7,7 @@ const A = ({ children, ...props }) => (
   </a>
 );
 
-const H2 = ({ children }) => (
+export const H2 = ({ children }) => (
   <h2>
     {children}
     <style jsx>{`

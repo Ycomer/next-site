@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { SkipNavContent } from '@reach/skip-nav';
 import { RecordsProvider } from '../../lib/learn/records';
 import { useIsMobile } from '../media-query';
@@ -10,7 +11,7 @@ import SocialMeta from '../social-meta';
 import FooterFeedback from '../footer-feedback';
 import Navigation from './Navigation';
 import Lesson from './Lesson';
-import Markdown from './Markdown';
+import Markdown, { H2 } from './Markdown';
 import FeedbackContext from '../feedback-context';
 
 const Layout = ({ meta, children }) => {
@@ -18,7 +19,15 @@ const Layout = ({ meta, children }) => {
 
   return (
     <FeedbackContext.Provider value={{ label: 'next-learn' }}>
-      <Page title={`Learn - ${meta.title} | Next.js`} sticky={!isMobile}>
+      {meta.stepId && (
+        <Head>
+          <meta name="robots" content="noindex" />
+        </Head>
+      )}
+      <Page
+        title={`${meta.subtitle ? `${meta.subtitle} - ` : ''}${meta.title} | Learn Next.js`}
+        sticky={!isMobile}
+      >
         <PageContent>
           <Container wide={isMobile}>
             <div className="content">
@@ -28,6 +37,7 @@ const Layout = ({ meta, children }) => {
                 </div>
                 <div className="lesson">
                   <Lesson meta={meta}>
+                    {meta.subtitle && <H2>{meta.subtitle}</H2>}
                     <Markdown>{children}</Markdown>
                   </Lesson>
                   <hr />
