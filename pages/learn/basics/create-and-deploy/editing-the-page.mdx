@@ -1,0 +1,66 @@
+import Layout from '../../../../components/learn/Layout';
+import Image from '../../../../components/image';
+import PrerenderIndicator from '../../../../components/learn/prerender-indicator';
+import Link from 'next/link';
+
+export const meta = {
+  title: 'Create and Deploy a Next.js App',
+  courseId: 'basics',
+  lessonId: 'create-and-deploy',
+  stepId: 'editing-the-page',
+  subtitle: 'Editing the page',
+  question: {
+    answers: ['A new label is created', 'A bot writes a comment'],
+    correctAnswer: 'A bot writes a comment'
+  }
+};
+
+Let’s try to edit the starter page.
+
+First, make sure the Next.js development server is still running. If not, you can start it using the following command (or use `yarn dev` if you prefer Yarn).
+
+```bash
+npm run dev
+```
+
+### Create a new branch
+
+Before we start editing, let’s create a new **Git branch**. You can use GitHub Desktop or use the following command from a new Terminal window. You can use any branch name.
+
+```bash
+git branch -b edit-starter-page
+```
+
+You might think creating a branch is unnecessary, but you’ll soon see why this is helpful.
+
+### Edit the Page
+
+Let’s try editing this page.
+
+- Open `pages/index.js` with your text editor.
+- Find the text that says **“Welcome to”** under the `<h1>` tag and change it to **“Learn”**.
+- Save the file.
+
+As soon as you save the file, the browser automatically reloads and updates the page with the new text:
+
+<Image
+  shadow
+  alt="Learn Next.js"
+  oversize={false}
+  src="/static/images/learn/create-and-deploy/learn-nextjs.png"
+  width={1030 / 2}
+  height={384 / 2}
+/>
+
+The Next.js development server has the **Hot Reloading** feature which monitors file changes and automatically updates the browser.
+
+### Push and Open a Pull Request
+
+Let’s open a pull request:
+
+- Commit and push the changes to GitHub.
+- Open a pull request using this branch.
+
+**Question**: When you open a pull request, you should notice something new that appears on the pull request page. Which of the following is it?
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

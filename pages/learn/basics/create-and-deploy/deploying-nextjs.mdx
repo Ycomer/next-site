@@ -1,0 +1,43 @@
+import Layout from '../../../../components/learn/Layout';
+import Image from '../../../../components/image';
+import PrerenderIndicator from '../../../../components/learn/prerender-indicator';
+import Link from 'next/link';
+
+export const meta = {
+  title: 'Create and Deploy a Next.js App',
+  courseId: 'basics',
+  lessonId: 'create-and-deploy',
+  stepId: 'deploying-nextjs',
+  subtitle: 'Deploying a Next.js App'
+};
+
+The easiest way to deploy Next.js to production is to use the **[ZEIT Now platform](https://zeit.co)** developed by the creators of Next.js. We believe ZEIT Now is the optimal place to deploy frontend apps. You can start using it for _free_ — no credit card required.
+
+### Create a ZEIT Now Account
+
+First, go to [https://zeit.co/signup](https://zeit.co/signup) to create a ZEIT Now account. Choose **Continue with GitHub** and go through the sign up process.
+
+### Import your `nextjs-blog` repository
+
+Once you’re signed up, **import** your `nextjs-blog` repository on ZEIT Now. You can do so from here: [https://zeit.co/import/git](https://zeit.co/import/git).
+
+- You’ll need to **Install Now for GitHub**. You can give access to **All Repositories**.
+- Once you’ve installed Now, import `nextjs-blog`.
+
+You can use _default values_ for the following settings — no need to change anything. ZEIT Now automatically detects that you have a Next.js app and chooses optimal build settings for you.
+
+- Project Name
+- Root Directory
+- Build Command
+- Output Directory
+- Development Command
+
+When you click **Deploy**, your Next.js app will start building. It should finish in under a minute.
+
+> **Help is available**: If your deployment fails, you can always get help on [GitHub Discussions](https://github.com/zeit/next.js/discussions). To learn more about deployment,
+
+When it’s done, you’ll get deployment URLs ending with `now.sh`. **Click on any of the URLs** and you should see the Next.js starter page live.
+
+Congratulations! You just deployed your Next.js app to production. To learn more about other deployment options, <Link href="/docs/[...slug]" as="/docs/deployment"><a>check out our documentation</a></Link>.
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

@@ -1,0 +1,49 @@
+import Layout from '../../../../components/learn/Layout';
+import Image from '../../../../components/image';
+import PrerenderIndicator from '../../../../components/learn/prerender-indicator';
+import Link from 'next/link';
+
+export const meta = {
+  title: 'Create and Deploy a Next.js App',
+  courseId: 'basics',
+  lessonId: 'create-and-deploy',
+  stepId: 'welcome-to-nextjs',
+  subtitle: 'Welcome to Next.js'
+};
+
+You should see a page like this when you access [http://localhost:3000](http://localhost:3000). This is the starter template page which shows some helpful information about Next.js.
+
+<Image
+  shadow
+  alt="Welcome to Next.js"
+  oversize={false}
+  src="/static/images/learn/create-and-deploy/welcome-to-nextjs.png"
+  width={1576 / 2}
+  height={1284 / 2}
+/>
+
+> **Help is available**: If you see an error or get stuck, you can always get help on [GitHub Discussions](https://github.com/zeit/next.js/discussions).
+
+### Deploy to Production
+
+Now that your Next.js app is up and running locally, let’s **deploy** it to production.
+
+You might be wondering: “But we haven’t even made any changes yet!” That’s ok. You’ll deploy your Next.js app to production at some point anyway, so let’s learn how to do so now!
+
+### Push to GitHub
+
+Before we deploy, let’s push our Next.js app to [GitHub](https://github.com/zeit/next.js) first. This will make deployment easier.
+
+- On your personal GitHub account, create a new repository called `nextjs-blog`. It can be public or private. You do **not** need to initialize it with a README or other files.
+- Push the Next.js app you created to this repository.
+
+To push to GitHub, you can use [GitHub Desktop](https://desktop.github.com/) or run the following commands (replace `<username>` with your GitHub username):
+
+```bash
+git remote add origin https://github.com/<username>/nextjs-blog.git
+git push -u origin master
+```
+
+Once your GitHub repository is ready, continue to the next page.
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
