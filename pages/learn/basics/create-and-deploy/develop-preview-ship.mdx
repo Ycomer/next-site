@@ -24,8 +24,43 @@ Try clicking on the **Preview** URL. You should see the changes you just made.
 
 ### Preview Deployment for Every Push
 
-### ...
+When you have a pull request open, ZEIT Now automatically creates a **preview deployment** for that branch on every push. The preview URL will always point to the latest preview deployment.
 
-- TODO: ZEIT Now Docs
+You can share this preview URL with your collaborators and get immediate feedback.
+
+### Merge to `master` to deploy to production
+
+If your preview deployment looks good, **merge it to `master`**.
+
+When you do this, ZEIT Now automatically creates a production deployment. You should be able to access it via the same production URL we used earlier:
+
+`nextjs-blog.<zeit-username>.now.sh`
+
+That’s it!
+
+### Develop, Preview, Ship
+
+<Image
+  shadow
+  alt="Develop, Preview, Ship"
+  oversize={false}
+  src="/static/images/learn/create-and-deploy/dps.png"
+  width={1400 / 2}
+  height={800 / 2}
+/>
+
+We’ve just gone through the workflow we call **DPS**: **D**evelop, **P**review, and **S**hip.
+
+- **Develop**: We’ve written code in Next.js and used the Next.js development server running to take advantage of its hot reloading feature.
+- **Preview**: We’ve pushed changes to a branch on GitHub, and ZEIT Now created a preview deployment that’s available via a URL. We can share this preview URL with others for feedback. In addition to doing _code reviews_, you can do _deployment previews_.
+- **Ship**: We’ve merged the pull request to `master` to ship to production.
+
+We strongly recommend using this workflow when developing Next.js apps — it will help you iterate on your app faster.
+
+> To learn more about ZEIT Now, check out [our documentation](https://zeit.co/docs).
+
+### Next Up: Creating Pages
+
+That’s it for the first lesson. In the next lesson, we’ll talk about _creating more pages and navigating between pages_.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
