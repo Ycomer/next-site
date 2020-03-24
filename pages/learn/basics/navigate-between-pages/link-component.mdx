@@ -8,8 +8,12 @@ export const meta = {
   stepId: 'link-component',
   subtitle: 'Link Component',
   question: {
-    answers: ['It enables client-side transition.', 'It enables custom CSS styling.'],
-    correctAnswer: 'It enables client-side transition.'
+    answers: [
+      'It enables client-side navigation.',
+      'It enables link prefetching.',
+      'Both of the above.'
+    ],
+    correctAnswer: 'Both of the above.'
   }
 };
 
@@ -37,7 +41,7 @@ Read <Link href="/posts/first-post"><a>this page!</a></Link>
 
 Next, replace the content of `pages/posts/first-post.js` with the following:
 
-```js
+```jsx
 import Link from 'next/link';
 
 const FirstPost = () => (
@@ -69,6 +73,6 @@ Let’s chec to see it works. You now should have a link on each page, allowing 
 
 It’s working! But you might be wondering: “Why is it necessary to use `<Link>`? Can we just use regular `<a href="…">` tags?”
 
-Before I give you the answer, try guessing why `<Link>` is necessary. **Hint**: it’s one of the two choices below:
+Before I give you the answer, try guessing why `<Link>` is necessary. Choose the one that you think is correct from below:
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

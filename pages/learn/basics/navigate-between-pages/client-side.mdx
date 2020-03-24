@@ -1,64 +1,49 @@
 import Layout from '../../../../components/learn/Layout';
 import Image from '../../../../components/image';
+import Link from 'next/link';
 
 export const meta = {
   title: 'Navigate Between Pages',
   courseId: 'basics',
   lessonId: 'navigate-between-pages',
-  stepId: 'client-side',
-  question: {
-    answers: [
-      'All items on the Network panel get refreshed.',
-      'New items get added to the Network panel without refreshing.'
-    ],
-    correctAnswer: 'New items get added to the Network panel without refreshing.'
-  }
+  stepId: 'client-side'
 };
 
-## Client-Side Navigation (Fast)
+## Client-Side Navigation
 
-To do client-side navigation, you need to use the `Link` component provided by Next.js.
+The `Link` component enables **client-side navigation** between two pages in the same Next.js app.
 
-First, modify `pages/index.js` as follows to use the `Link` component:
+Client-side navigation means that the page transition happens _using JavaScript_, which is faster than the default navigation done by the browser.
 
-```jsx
-import Link from 'next/link';
+Here’s a simple way you can verify:
 
-const Index = () => (
-  <div>
-    <h1>Index</h1>
-    <p>
-      <Link href="/posts/first-post">
-        <a>First Post</a>
-      </Link>
-    </p>
-  </div>
-);
+- Use the browser’s developer tools to change the `background` of `<html>` to `yellow`.
+- Click on the links to go back and forth between the two pages.
+- You’ll see that the yellow background persists between page transitions. That’s because the browser does _not_ load the full page.
 
-export default Index;
-```
+<Image
+  shadow
+  alt="Links"
+  oversize={false}
+  src="/static/images/learn/navigate-between-pages/client-side.gif"
+  width={700 / 1.5}
+  height={558 / 1.5}
+/>
 
-**Note:** The `href` attribute was moved to `Link` from the `a` tag.
+If you’ve used `<a href="…">` instead of `<Link href="…">` and did this, the background color will be cleared because the browser does the full refresh.
 
-Then, modify `pages/posts/first-post.js` as follows:
+### Code splitting and prefetching
 
-```jsx
-import Link from 'next/link';
+Next.js does code splitting automatically so each page only loads what’s necessary for that page. That means when the index page is rendered, the code for other pages are not served initially. This makes the index page load quickly.
 
-const FirstPost = () => (
-  <div>
-    <h1>First Post</h1>
-    <p>
-      <Link href="/">
-        <a>Index</a>
-      </Link>
-    </p>
-  </div>
-);
+Furthermore, in a production build of Next.js (which we’ll cover later), whenever `Link` components appear in the browser’s viewport, Next.js automatically **prefetches** the code for the linked page in the background.
 
-export default FirstPost;
-```
+So in our example, when the link to the "First Post" page becomes visible, Next.js prefetches the code for that page in the background. By the time you click the link, the code will already be loaded, and the page transition will be instant!
 
-Go to [http://localhost:3000/](http://localhost:3000/) and open the Network panel on your browser’s developer tools again. What happens when you click on the links on each page?
+**Summary:** Next.js automatically optimizes your site for the best performance by code splitting, client-side navigation, and prefetching (in production). You just need to create routes as files under `pages` and use `Link`.
+
+You can learn more about the `Link` component <Link href="https://nextjs.org/docs/api-reference/next/link"><a>here</a></Link> and routing in general <Link href="https://nextjs.org/docs/routing/introduction"><a>here</a></Link>.
+
+> **Note:** If you need to link to an <em>external</em> page outside the Next.js app, just use an `<a>` tag without `Link`.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
