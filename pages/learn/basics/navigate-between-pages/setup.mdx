@@ -4,23 +4,29 @@ export const meta = {
   title: 'Navigate Between Pages',
   courseId: 'basics',
   lessonId: 'navigate-between-pages',
-  stepId: 'setup'
+  stepId: 'setup',
+  subtitle: 'Setup'
 };
 
-## Setup (Optional)
+### Download Starter Code (Optional)
 
-**If you’re continuing from the previous lesson,** you can skip the following and go straight to the next page.
+**If you’re continuing from the previous lesson,** you can skip the following.
 
-Otherwise, you can download, install, and run the starter code below. Again, this is NOT necessary if you’ve just finished the previous lesson.
+Otherwise, you can download, install, and run the starter code for this lesson below. Again, this is NOT necessary if you’ve just finished the previous lesson.
 
 ```bash
-git clone https://github.com/zeit/next-learn-demo.git
-cd next-learn-demo
-cd 1-navigate-between-pages
-npm install
+npm init next-app nextjs-blog --example "https://github.com/zeit/next-learn-demo/tree/master/1-navigate-between-pages"
+cd nextjs-blog
 npm run dev
 ```
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+> If you prefer [Yarn](https://yarnpkg.com/), you can use `yarn dev` instead of `npm run dev`.
 
-;
+### Create a Branch (Optional)
+
+If you’d like to follow the **DPS** workflow (**D**evelop, **P**review, **S**hip), you can:
+
+- Create a new branch, and
+- Open a pull request after making a change to see preview deployments.
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
