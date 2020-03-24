@@ -1,0 +1,74 @@
+import Layout from '../../../../components/learn/Layout';
+import Image from '../../../../components/image';
+
+export const meta = {
+  title: 'Navigate Between Pages',
+  courseId: 'basics',
+  lessonId: 'navigate-between-pages',
+  stepId: 'link-component',
+  subtitle: 'Link Component',
+  question: {
+    answers: ['It enables client-side transition.', 'It enables custom CSS styling.'],
+    correctAnswer: 'It enables client-side transition.'
+  }
+};
+
+In a Next.js app, if you’re creating a link to **some other page** in the same Next.js app, you should use the special `Link` component. We’ll learn how to use `Link` first, and then talk about why it’s necessary.
+
+### Using `<Link>`
+
+First, in `pages/index.js`, import the `Link` component from `next/link` by adding this line at the top:
+
+```js
+import Link from 'next/link';
+```
+
+Then modify this line in the `h1` tag:
+
+```js
+Learn <a href="https://nextjs.org">Next.js!</a>
+```
+
+To this:
+
+```js
+Read <Link href="/posts/first-post"><a>this page!</a></Link>
+```
+
+Next, replace the content of `pages/posts/first-post.js` with the following:
+
+```js
+import Link from 'next/link';
+
+const FirstPost = () => (
+  <>
+    <h1>First Post</h1>
+    <p>
+      <Link href="/">
+        <a>Back to home</a>
+      </Link>
+    </p>
+  </>
+);
+
+export default FirstPost;
+```
+
+As you can see, the `Link` component is similar to using `<a>` tags, but instead of `<a href="…">`, you use `<Link href="…">` and put an `<a>` tag inside.
+
+Let’s chec to see it works. You now should have a link on each page, allowing you to go back and forth:
+
+<Image
+  shadow
+  alt="Links"
+  oversize={false}
+  src="/static/images/learn/navigate-between-pages/links.gif"
+  width={990 / 2}
+  height={344 / 2}
+/>
+
+It’s working! But you might be wondering: “Why is it necessary to use `<Link>`? Can we just use regular `<a href="…">` tags?”
+
+Before I give you the answer, try guessing why `<Link>` is necessary. **Hint**: it’s one of the two choices below:
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
