@@ -17,9 +17,11 @@ Client-side navigation means that the page transition happens _using JavaScript_
 
 Here’s a simple way you can verify:
 
-- Use the browser’s developer tools to change the `background` of `<html>` to `yellow`.
+- Use the browser’s developer tools to change the `background` CSS property of `<html>` to `yellow`.
 - Click on the links to go back and forth between the two pages.
-- You’ll see that the yellow background persists between page transitions. That’s because the browser does _not_ load the full page.
+- You’ll see that the yellow background persists between page transitions.
+
+This shows that the browser does _not_ load the full page and client-side navigation is working.
 
 <Image
   shadow
@@ -30,17 +32,19 @@ Here’s a simple way you can verify:
   height={558 / 1.5}
 />
 
-If you’ve used `<a href="…">` instead of `<Link href="…">` and did this, the background color will be cleared because the browser does the full refresh.
+If you’ve used `<a href="…">` instead of `<Link href="…">` and did this, the background color will be cleared on link clicks because the browser does the full refresh.
 
 ### Code splitting and prefetching
 
 Next.js does code splitting automatically so each page only loads what’s necessary for that page. That means when the index page is rendered, the code for other pages are not served initially. This makes the index page load quickly.
 
-Furthermore, in a production build of Next.js (which we’ll cover later), whenever `Link` components appear in the browser’s viewport, Next.js automatically **prefetches** the code for the linked page in the background.
+Furthermore, in a production build of Next.js, whenever `Link` components appear in the browser’s viewport, Next.js automatically **prefetches** the code for the linked page in the background. By the time you click the link, the destination page will already be loaded in the background, and the page transition will be instant!
 
-So in our example, when the link to the "First Post" page becomes visible, Next.js prefetches the code for that page in the background. By the time you click the link, the code will already be loaded, and the page transition will be instant!
+You can check this by creating a preview or production deployment on ZEIT Now.
 
-**Summary:** Next.js automatically optimizes your site for the best performance by code splitting, client-side navigation, and prefetching (in production). You just need to create routes as files under `pages` and use `Link`.
+### Summary
+
+Next.js automatically optimizes your site for the best performance by code splitting, client-side navigation, and prefetching (in production). You just need to create routes as files under `pages` and use `Link`.
 
 You can learn more about the `Link` component <Link href="https://nextjs.org/docs/api-reference/next/link"><a>here</a></Link> and routing in general <Link href="https://nextjs.org/docs/routing/introduction"><a>here</a></Link>.
 
