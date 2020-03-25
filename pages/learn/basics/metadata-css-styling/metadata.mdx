@@ -1,0 +1,53 @@
+import Layout from '../../../../components/learn/Layout';
+import AnswerBox from '../../../../components/learn/AnswerBox';
+import Image from '../../../../components/image';
+
+export const meta = {
+  title: 'Metadata and CSS Styling',
+  courseId: 'basics',
+  lessonId: 'metadata-css-styling',
+  stepId: 'metadata',
+  subtitle: 'Metadata'
+};
+
+First, let’s talk about page metadata such as `<title>` tags.
+
+Open `pages/index.js` in your editor and take a look at the following lines:
+
+```jsx
+<Head>
+  <title>Create Next App</title>
+  <link rel="icon" href="/favicon.ico" />
+</Head>
+```
+
+Notice that it uses `<Head>` instead of `<head>`.
+
+In Next.js, you can import `Head` from `next/head` and use it anywhere in the component tree to have it reflected in the page’s `<head>` tags.
+
+### Adding `<Head>` to `first-page.js`
+
+We don’t yet have `<Head>` for `pages/posts/first-page.js`, so let’s add it. First, import it from `next/head`:
+
+```js
+import Head from 'next/head';
+```
+
+And add it to the `FirstPost` component. For now, we‘ll add just the `title` tag:
+
+```jsx
+const FirstPost = () => (
+  <>
+    <Head>
+      <title>First Post</title>
+    </Head>
+    …
+  </>
+);
+```
+
+Try accessing [http://localhost:3000/posts/first-post](http://localhost:3000/posts/first-post). The browser tab should now say “First Post”. By using your browser’s developer tools, you should see that the `title` tag is added to `<head>`.
+
+> To learn more about `next/head`, refer to [our documentation](https://nextjs.org/docs/api-reference/next/head).
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

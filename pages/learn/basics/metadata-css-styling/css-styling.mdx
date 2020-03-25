@@ -1,0 +1,32 @@
+import Layout from '../../../../components/learn/Layout';
+import Image from '../../../../components/image';
+
+export const meta = {
+  title: 'Metadata and CSS Styling',
+  courseId: 'basics',
+  lessonId: 'metadata-css-styling',
+  stepId: 'css-styling',
+  subtitle: 'CSS Styling'
+};
+
+Let’s now talk about **CSS styling**.
+
+As you can see, our index page ([http://localhost:3000](http://localhost:3000)) already has nice styling. If you take a look at `pages/index.js`, you should see the code like this:
+
+```jsx
+<style jsx>{`
+  …
+`}</style>
+```
+
+This is using a library called [styled-jsx](https://github.com/zeit/styled-jsx). It’s a “CSS-in-JS” library — it lets you write CSS within a React component, and the CSS styles will be _scoped_ (other components won’t be affected).
+
+Next.js has built-in support for [styled-jsx](https://github.com/zeit/styled-jsx), but you can also use other popular CSS-in-JS libraries such as [styled-components](https://styled-components.com/) or [emotion](https://emotion.sh/docs/introduction) by installing them separately.
+
+### Writing or Importing CSS
+
+CSS-in-JS is great, but we understand that many people prefer writing plain CSS or importing popular CSS libraries like [Tailwind CSS](https://tailwindcss.com/). Writing plain CSS instead of using CSS-in-JS can lead to smaller bundle size (we’ll talk about this later).
+
+So in this lesson, we’ll talk about how to write or import CSS files in Next.js. We’ll also talk about Next.js’s built-in support for [CSS Modules](https://github.com/css-modules/css-modules) and [Sass](https://sass-lang.com/). Let’s dive in!
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
