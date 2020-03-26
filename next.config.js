@@ -62,17 +62,17 @@ const nextConfig = {
         {
           source: '/learn{/}?',
           statusCode: 301,
-          destination: '/learn/basics/create-and-deploy'
+          destination: '/learn/basics/create-nextjs-app'
         },
         {
           source: '/learn/basics/getting-started{/}?',
           statusCode: 301,
-          destination: '/learn/basics/create-and-deploy'
+          destination: '/learn/basics/create-nextjs-app'
         },
         {
           source: '/learn/basics/getting-started/:page{/}?',
           statusCode: 301,
-          destination: '/learn/basics/create-and-deploy'
+          destination: '/learn/basics/create-nextjs-app'
         },
         {
           source: '/learn/basics/server-side-support-for-clean-urls{/}?',
