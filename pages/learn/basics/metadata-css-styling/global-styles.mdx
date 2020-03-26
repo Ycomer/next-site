@@ -1,0 +1,89 @@
+import Layout from '../../../../components/learn/Layout';
+import Image from '../../../../components/image';
+
+export const meta = {
+  title: 'Metadata and CSS Styling',
+  courseId: 'basics',
+  lessonId: 'metadata-css-styling',
+  stepId: 'global-styles',
+  subtitle: 'Global Styles'
+};
+
+CSS Modules are useful for component-level styles. But if you want to load some CSS to be loaded by **every page**, Next.js has support for that as well.
+
+To load global CSS files, **create a file called `_app.js`** under `pages` and add the following content:
+
+```jsx
+const App = ({ Component, pageProps }) => <Component {...pageProps} />;
+
+export default App;
+```
+
+This `App` component is the top-level component which will be common across all the different pages. You can use this `App` component to keep state when navigating between pages, for example.
+
+### Restart the Development Server
+
+**Important:** You need to restart the development server when you add `_app.js`. Press <kbd>Ctrl + c</kbd> to stop the server and run:
+
+```
+npm run dev
+```
+
+(Use `yarn dev` if you prefer Yarn.)
+
+### Adding Global CSS
+
+In Next.js, you can add global CSS files by importing them from `_app.js`. You **cannot** import global CSS anywhere else.
+
+You can place the CSS file anywhere and use any name. So let’s do the following:
+
+- Create a top-level `styles` directory and create `global.css` inside.
+- Add the following content. It resets some styles, sets `font-family`, and changes the color of the `a` tag.
+
+```css
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira
+      Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+```
+
+Finally, import it from `_app.js`:
+
+```jsx
+import '../styles/global.css';
+
+const App = ({ Component, pageProps }) => <Component {...pageProps} />;
+
+export default App;
+```
+
+Now, if you access [localhost:3000/posts/first-post](http://localhost:3000/posts/first-post), you’ll see that the styles are applied:
+
+<Image
+  shadow
+  alt="Global Styles"
+  oversize={false}
+  src="/static/images/learn/metadata-css-styling/global-styles.png"
+  width={534 / 2}
+  height={352 / 2}
+/>
+
+To summarize what we’ve learned so far:
+
+- To use CSS Modules, import a CSS file named `*.module.css` from any component.
+- To use global CSS, import a CSS file in `pages/_app.js`.
+
+Before we wrap up, let’s talk about some helpful techniques related to Next.js’s CSS support.
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

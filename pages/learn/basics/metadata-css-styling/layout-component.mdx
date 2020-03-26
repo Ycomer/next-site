@@ -44,6 +44,8 @@ Create a file called `Layout.module.css` in the `components` directory with the 
 }
 ```
 
+> **Important:** To use this CSS Modules, the CSS file name must end with `.module.css`.
+
 To use this in `Layout`, you need to:
 
 - Import it as `styles`, and
@@ -64,7 +66,7 @@ If you go to [localhost:3000/posts/first-post](http://localhost:3000/posts/first
 
 <Image
   shadow
-  alt="Component-Level CSS"
+  alt="Layout"
   oversize={false}
   src="/static/images/learn/metadata-css-styling/layout.png"
   width={2008 / 2}
@@ -77,17 +79,17 @@ Now, if you take a look at the HTML in your browser’s devtools, you’ll notic
 
 <Image
   shadow
-  alt="Component-Level CSS"
+  alt="Devtools"
   oversize={false}
   src="/static/images/learn/metadata-css-styling/devtools.png"
-  width={1258 / 2}
-  height={262 / 2}
+  width={1012 / 2}
+  height={214 / 2}
 />
 
 This is what CSS Modules does: _It automatically generates unique class names_. As long as you use CSS Modules, you don’t have to worry about class name collisions.
 
 Furthermore, Next.js’s code splitting feature works on CSS Modules as well. It ensures the minimal amount of CSS is loaded for each page. This results in smaller bundle sizes.
 
-> **Important:** To use this CSS Modules, the CSS file name must end with `.module.css`.
+CSS Modules are also more performant than many CSS-in-JS libraries because CSS Modules are evaluated and transformed by Webpack at **build time**. They also don’t create extra layers of React components.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
