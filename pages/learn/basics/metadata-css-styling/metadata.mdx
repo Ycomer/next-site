@@ -50,5 +50,7 @@ const FirstPost = () => (
 Try accessing [localhost:3000/posts/first-post](http://localhost:3000/posts/first-post). The browser tab should now say “First Post”. By using your browser’s developer tools, you should see that the `title` tag is added to `<head>`.
 
 > To learn more about `next/head`, check out <Link href="/docs/[...slug]" as="/docs/api-reference/next/head"><a>our documentation</a></Link>.
+>
+> Also, if you want to add the `lang` attribute to the `html` tag, you can do so by creating a custom `Document` component. Learn more on <Link href="/docs/[...slug]" as="/docs/advanced-features/custom-document"><a>our documentation</a></Link>.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
