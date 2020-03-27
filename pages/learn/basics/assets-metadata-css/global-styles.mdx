@@ -38,7 +38,7 @@ In Next.js, you can add global CSS files by importing them from `_app.js`. You *
 You can place the CSS file anywhere and use any name. So let’s do the following:
 
 - Create a top-level `styles` directory and create `global.css` inside.
-- Add the following content. It resets some styles, sets `font-family`, and changes the color of the `a` tag.
+- Add the following content. It resets some styles and changes the color of the `a` tag.
 
 ```css
 html,
@@ -47,6 +47,8 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira
       Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
 }
 
 * {
@@ -54,7 +56,16 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #0070f3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
 }
 ```
 
@@ -75,15 +86,13 @@ Now, if you access [localhost:3000/posts/first-post](http://localhost:3000/posts
   alt="Global Styles"
   oversize={false}
   src="/static/images/learn/assets-metadata-css/global-styles.png"
-  width={534 / 2}
-  height={352 / 2}
+  width={484 / 2}
+  height={316 / 2}
 />
 
 To summarize what we’ve learned so far:
 
 - To use CSS Modules, import a CSS file named `*.module.css` from any component.
 - To use global CSS, import a CSS file in `pages/_app.js`.
-
-Before we wrap up, let’s talk about some helpful techniques related to Next.js’s CSS support.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
