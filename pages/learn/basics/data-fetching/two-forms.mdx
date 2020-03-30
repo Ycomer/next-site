@@ -16,26 +16,37 @@ Next.js has two forms of pre-rendering: **Static Generation** and **Server-side 
 
 <Image
   shadow
-  alt="Pre-rendering"
+  alt="Static Generation"
   oversize={false}
   src="/static/images/learn/data-fetching/static-generation.png"
   width={1386 / 2}
-  height={824 / 2}
+  height={744 / 2}
 />
 <Image
   shadow
-  alt="No pre-rendering"
+  alt="Server-side Rendering"
   oversize={false}
   src="/static/images/learn/data-fetching/server-side-rendering.png"
   width={1386 / 2}
   height={800 / 2}
 />
 
+> Every time you deploy your Next.js app on ZEIT Now (both preview and production deployments), it runs `next build` by default. This is when Static Generation happens.
+>
+> In development (when you run `npm run dev` or `yarn dev`), every page is pre-rendered on each request — even for pages that use Static Generation.
+
 ### Per-page Basis
 
-Importantly, Next.js lets you **choose** which pre-rendering form you'd like to use for each page. You can create a "hybrid" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.
+Importantly, Next.js lets you **choose** which pre-rendering form to use for each page. You can create a "hybrid" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.
 
-> Every time you deploy your Next.js app on ZEIT Now (both preview and production deployments), it runs `next build` by default. This is when Static Generation happens.
+<Image
+  shadow
+  alt="Per-page Basis"
+  oversize={false}
+  src="/static/images/learn/data-fetching/per-page-basis.png"
+  width={1156 / 2}
+  height={902 / 2}
+/>
 
 ### Our Recommendation: Use Static Generation
 

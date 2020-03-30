@@ -1,0 +1,36 @@
+import Layout from '../../../../components/learn/Layout';
+import Image from '../../../../components/image';
+
+export const meta = {
+  title: 'Data Fetching',
+  courseId: 'basics',
+  lessonId: 'data-fetching',
+  stepId: 'with-data',
+  subtitle: 'Static Generation with and without Data'
+};
+
+Static Generation can be done with and without **data**.
+
+So far, all the pages we’ve created do not require fetching external data. Those pages will automatically be statically generated when the app is built for production.
+
+<Image
+  shadow
+  alt="Static Generation without Data"
+  oversize={false}
+  src="/static/images/learn/data-fetching/static-generation-without-data.png"
+  width={1246 / 2}
+  height={784 / 2}
+/>
+
+However, for some pages, you might not be able to render the HTML without first fetching some external data. Maybe you need to access the file system, fetch external API, or query your database at build time. Next.js supports this case — Static Generation **with data** — out of the box.
+
+<Image
+  shadow
+  alt="Static Generation with Data"
+  oversize={false}
+  src="/static/images/learn/data-fetching/static-generation-with-data.png"
+  width={1246 / 2}
+  height={1050 / 2}
+/>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
