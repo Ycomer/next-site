@@ -66,7 +66,6 @@ const Layout = ({ meta, children }) => {
                 flex: 1;
                 width: 100%;
                 min-width: 0;
-                max-width: 600px;
               }
               // CSS only media query for mobile + SSR
               @media screen and (max-width: 640px) {
