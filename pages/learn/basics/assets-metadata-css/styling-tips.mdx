@@ -64,7 +64,10 @@ Out of the box, with no configuration, Next.js compiles CSS using [PostCSS](http
 
 To customize PostCSS config, you can create a top-level file called `postcss.config.js`. This is useful if you’re using libraries like [Tailwind CSS](https://tailwindcss.com/).
 
-Here’s an example `postcss.config.js` for using [Tailwind CSS](https://tailwindcss.com/) with [`purgecss`](https://github.com/FullHuman/purgecss) which removes unused CSS. (You don’t need `autoprefixer` because Next.js includes it by default).
+Here’s an example `postcss.config.js` for using [Tailwind CSS](https://tailwindcss.com/) with [`purgecss`](https://github.com/FullHuman/purgecss) which removes unused CSS.
+
+- You need to install `tailwindcss` and `@fullhuman/postcss-purgecss`.
+- You don’t need `autoprefixer` because Next.js includes it by default.
 
 ```js
 module.exports = {
