@@ -118,4 +118,17 @@ You should now see the blog data if you access [localhost:3000](http://localhost
   height={619 / 2}
 />
 
+Congratulations! We successfully fetched external data (from the file system) and pre-rendered the index page with this data.
+
+<Image
+  shadow
+  alt="Index Page"
+  oversize={false}
+  src="/static/images/learn/data-fetching/index-page.png"
+  width={1246 / 2}
+  height={948 / 2}
+/>
+
+Before we wrap up this lesson, let’s talk about some tips for using `getStaticProps` on the next page.
+
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
