@@ -9,4 +9,59 @@ export const meta = {
   subtitle: 'Blog Data'
 };
 
+We’ll now add blog data to our app using the file system. Each blog post will be a markdown file.
+
+- Create a top-level directory called **`posts`**.
+- Inside, create two files: **`first-post.md`** and **`dps.md`**.
+
+Copy the following to `first-post.md`:
+
+```md
+---
+title: 'First Post'
+date: '2020-01-01'
+---
+
+This is the first post!
+
+It uses the [Static Generation](https://nextjs.org/docs/basic-features/pages) feature of Next.js.
+```
+
+Copy the following to `dps.md`:
+
+```md
+---
+title: 'DPS: Develop, Preview, Ship'
+date: '2020-01-02'
+---
+
+[ZEIT Now](https://zeit.co/) supports the **DPS** workflow: **D**evelop, **P**review, and **S**hip:
+
+- **Develop**: Write code in Next.js. Keep the development server running and take advantage of its hot code reloading feature.
+- **Preview**: Every time you push changes to a branch on GitHub / GitLab / BitBucket, ZEIT Now automatically creates a new deployment with a unique URL.
+- **Ship**: When you’re ready to ship, merge the pull request to your default branch (e.g. `master`). ZEIT Now will automatically create a production deployment.
+
+By using the DPS workflow, in addition to doing code reviews, you can do _deployment previews_. Each deployment creates a unique URL that can be shared or used for integration tests.
+```
+
+> You might have noticed that each markdown file has a metadata section at the top containing `title` and `date`. This is called YAML Front Matter, which can be parsed using a library called [gray-matter](https://github.com/jonschlinkert/gray-matter).
+
+### Parsing the Blog Data on `getStaticProps`
+
+Now, let’s update our index page (`pages/index.js`) using this data. We’d like to:
+
+- Parse each markdown file and get `title`, `date`, and file name (which will be used as `slug` for the post URL).
+- List the data on the index page, sorted by date.
+
+To do this on pre-render, we need to implement `getStaticProps`.
+
+<Image
+  shadow
+  alt="Index Page"
+  oversize={false}
+  src="/static/images/learn/data-fetching/index-page.png"
+  width={1246 / 2}
+  height={948 / 2}
+/>
+
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
