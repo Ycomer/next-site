@@ -14,16 +14,12 @@ First, let’s set up the files:
 - Create a file called **`[id].js`** inside the `pages/posts` directory.
 - Also, **remove `first-post.js`** inside the `pages/posts` directory — we’ll no longer use this.
 
-Then, add this to `[id].js`. We’ll keep it simple for now:
+Then, add this to `[id].js`. We’ll fill in `...` later.
 
 ```jsx
 import Layout from '../../components/Layout';
 
-const Post = () => (
-  <Layout>
-    <h1>Post Page</h1>
-  </Layout>
-);
+const Post = () => <Layout>...</Layout>;
 
 export default Post;
 ```
@@ -33,8 +29,31 @@ Then, open `lib/posts.js` and add this function. This will return the list of fi
 ```jsx
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory);
-  return fileNames.map(fileName => fileName.replace(/\.md$/, ''));
+  return fileNames.map(fileName => {
+    return {
+      params: {
+        id: fileName.replace(/\.md$/, '')
+      }
+    };
+  });
 }
+```
+
+**Important**: The returned list is _not_ just an array of strings — it **must** be an array of objects that like below. Each object must have the `params` key and contain an object with the `id` key (because we’re using `[id]` in the file name).
+
+```js
+[
+  {
+    params: {
+      id: 'dps'
+    }
+  },
+  {
+    params: {
+      id: 'pre-rendering'
+    }
+  }
+];
 ```
 
 Finally, in `[id].js`, we’ll import this function:

@@ -43,7 +43,7 @@ const Post = () => <Layout>...</Layout>;
 export default Post;
 ```
 
-Now, here’s what’s new: We’ll export an async function called `getStaticPaths` from this page. In this function, we need to return an array of **possible values** for `id`.
+Now, here’s what’s new: We’ll export an async function called `getStaticPaths` from this page. In this function, we need to return a list of **possible values** for `id`.
 
 ```jsx
 import Layout from '../../components/Layout';
@@ -51,7 +51,7 @@ import Layout from '../../components/Layout';
 const Post = () => <Layout>...</Layout>;
 
 export async function getStaticPaths() {
-  // Return an array of possible value for id
+  // Return a list of possible value for id
 }
 
 export default Post;
@@ -67,7 +67,7 @@ import Layout from '../../components/Layout';
 const Post = () => <Layout>...</Layout>;
 
 export async function getStaticPaths() {
-  // Return an array of possible value for id
+  // Return a list of possible value for id
 }
 
 export async function getStaticProps({ params }) {
