@@ -12,20 +12,7 @@ export const meta = {
 We’ll now add blog data to our app using the file system. Each blog post will be a markdown file.
 
 - Create a top-level directory called **`posts`**.
-- Inside, create two files: **`first-post.md`** and **`dps.md`**.
-
-Copy the following to `first-post.md`:
-
-```md
----
-title: 'First Post'
-date: '2020-01-01'
----
-
-This is the first post!
-
-It uses the [Static Generation](https://nextjs.org/docs/basic-features/pages) feature of Next.js.
-```
+- Inside, create two files: **`dps.md`** and **`pre-rendering.md`**.
 
 Copy the following to `dps.md`:
 
@@ -44,13 +31,29 @@ date: '2020-01-02'
 By using the DPS workflow, in addition to doing code reviews, you can do _deployment previews_. Each deployment creates a unique URL that can be shared or used for integration tests.
 ```
 
+Copy the following to `pre-rendering.md`:
+
+```md
+---
+title: 'Two Forms of Pre-rendering'
+date: '2020-01-01'
+---
+
+[Next.js](https://nextjs.org/) has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
+
+- **Static Generation (Recommended)**: The HTML is generated at **build time** and will be reused on each request.
+- **Server-side Rendering**: The HTML is generated on **each request**.
+
+Importantly, Next.js lets you **choose** which pre-rendering form you'd like to use for each page. You can create a "hybrid" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.
+```
+
 > You might have noticed that each markdown file has a metadata section at the top containing `title` and `date`. This is called YAML Front Matter, which can be parsed using a library called [gray-matter](https://github.com/jonschlinkert/gray-matter).
 
 ### Parsing the Blog Data on `getStaticProps`
 
 Now, let’s update our index page (`pages/index.js`) using this data. We’d like to:
 
-- Parse each markdown file and get `title`, `date`, and file name (which will be used as `slug` for the post URL).
+- Parse each markdown file and get `title`, `date`, and file name (which will be used as `id` for the post URL).
 - List the data on the index page, sorted by date.
 
 To do this on pre-render, we need to implement `getStaticProps`.
