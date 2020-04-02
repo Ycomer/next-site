@@ -59,6 +59,24 @@ export default Post;
 
 In our case, `id` can be `dps` or `pre-rendering`. So we need it to return an array `['dps', 'pre-rendering']`.
 
+Finally, we need to implement `getStaticProps` again - this time, to fetch necessary data for the blog post with a given `id`. `getStaticProps` is given `params`, which contains `id`.
+
+```jsx
+import Layout from '../../components/Layout';
+
+const Post = () => <Layout>...</Layout>;
+
+export async function getStaticPaths() {
+  // Return an array of possible value for id
+}
+
+export async function getStaticProps({ params }) {
+  // Fetch necessary data for the blog post using params.id
+}
+
+export default Post;
+```
+
 Here’s a graphic summary of what we just talked about:
 
 <Image
@@ -67,7 +85,7 @@ Here’s a graphic summary of what we just talked about:
   oversize={false}
   src="/static/images/learn/data-fetching/how-to-dynamic-paths.png"
   width={1246 / 2}
-  height={948 / 2}
+  height={1054 / 2}
 />
 
 Let’s try this on the next page!
