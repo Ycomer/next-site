@@ -49,5 +49,7 @@ Next.js automatically optimizes your site for the best performance by code split
 You can learn more about the `Link` component <Link href="/docs/[...slug]" as="/docs/api-reference/next/link"><a>here</a></Link> and routing in general <Link href="/docs/[...slug]" as="/docs/routing/introduction"><a>here</a></Link>.
 
 > **Note:** If you need to link to an <em>external</em> page outside the Next.js app, just use an `<a>` tag without `Link`.
+>
+> If you need to add attributes like `className`, add it to the `a` tag, _not_ to the `Link` tag.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
