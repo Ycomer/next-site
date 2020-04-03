@@ -1,0 +1,48 @@
+import Layout from '../../../../components/learn/Layout';
+import Link from 'next/link';
+
+export const meta = {
+  title: 'API Routes',
+  courseId: 'basics',
+  lessonId: 'api-routes',
+  stepId: 'next-steps',
+  subtitle: 'Next Steps'
+};
+
+Congratulations on finishing all the basics lessons! Here are some recommended steps:
+
+### Share Your Next.js App
+
+We encourage you to share the app you built in this tutorial on Twitter. Please mention [@zeithq](https://twitter.com/zeithq) if you do so we can take a look! We’d love to get your feedback on this tutorial as well.
+
+### What to Learn Next
+
+Check out the following documentation to learn more:
+
+- <Link href="/docs/[...slug]" as="/docs/basic-features/typescript">
+    <a>TypeScript</a>
+  </Link>
+  : Next.js provides an integrated TypeScript support out of the box.
+- <Link href="/docs/[...slug]" as="/docs/api-reference/next.config.js/introduction">
+    <a>Next.js Configuration</a>
+  </Link>
+  : In particular, the <Link
+    href="/docs/[...slug]"
+    as="/docs/api-reference/next.config.js/environment-variables"
+  >
+    <a>Environment Variables</a>
+  </Link> documentation might be helpful.
+- <Link href="/docs/[...slug]" as="/docs/advanced-features/amp-support/introduction">
+    <a>AMP Support</a>
+  </Link>
+  : Next.js lets you easily create an AMP page.
+- <Link href="/docs/[...slug]" as="/docs/deployment">
+    <a>Deployment</a>
+  </Link>
+  : Learn more about Next.js deployment.
+
+### Join the Conversation
+
+If you have questions about anything related to Next.js, you're always welcome to ask our community on [GitHub Discussions](https://github.com/zeit/next.js/discussions).
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
