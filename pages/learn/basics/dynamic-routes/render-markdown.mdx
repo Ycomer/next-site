@@ -33,9 +33,7 @@ export async function getPostData(id) {
   const { data, content } = matter(fileContents);
 
   // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
-    .process(content);
+  const processedContent = await remark().use(html).process(content);
   const contentHtml = processedContent.toString();
 
   // Combine the data with the id and contentHtml
@@ -83,7 +81,7 @@ You should now see the blog content:
 
 <Image
   shadow
-  alt="How to Statically Generate Pages with Dynamic Paths"
+  alt="How to Statically Generate Pages with Dynamic Routes"
   oversize={false}
   src="/static/images/learn/dynamic-routes/markdown.png"
   width={1326 / 2}
