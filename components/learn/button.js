@@ -25,6 +25,7 @@ export default withPure(
     noHover,
     flat,
     full,
+    wide,
     className,
     ...props
   }) => {
@@ -56,6 +57,7 @@ export default withPure(
             line-height: 2.5rem;
           `
               : ''}
+            ${wide ? `padding: 0.25rem 0.8rem; margin: -0.25rem -0.3rem;` : ''}
           }
           a:hover {
             color: ${color || '#0070f3'};
@@ -63,6 +65,7 @@ export default withPure(
           }
           a.invert {
             margin: 0;
+            ${wide ? `margin: -0.25rem -0.3rem;` : ''}
             border-radius: 7px;
             color: white;
             background: ${color || '#0070f3'};
