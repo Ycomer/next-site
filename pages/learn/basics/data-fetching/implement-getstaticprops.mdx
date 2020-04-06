@@ -80,31 +80,33 @@ export async function getStaticProps() {
 Once this is set up, the `allPostsData` prop will be passed to the `Home` component. To see this, modify the component definition to take `{ allPostsData }`:
 
 ```jsx
-const Home = ({ allPostsData }) => ...
+export default function Home ({ allPostsData }) { ... }
 ```
 
 To display the data, add another `<section>` tag at the bottom of this component:
 
 ```jsx
-const Home = ({ allPostsData }) => (
-  <Layout home>
-    {/* ... */}
-    <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-      <h2 className={utilStyles.headingLg}>Blog</h2>
-      <ul className={utilStyles.list}>
-        {allPostsData.map(({ id, date, title }) => (
-          <li className={utilStyles.listItem}>
-            {title}
-            <br />
-            {id}
-            <br />
-            {date}
-          </li>
-        ))}
-      </ul>
-    </section>
-  </Layout>
-);
+export default function Home({ allPostsData }) {
+  return (
+    <Layout home>
+      {/* ... */}
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <ul className={utilStyles.list}>
+          {allPostsData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem}>
+              {title}
+              <br />
+              {id}
+              <br />
+              {date}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </Layout>
+  );
+}
 ```
 
 You should now see the blog data if you access [localhost:3000](http://localhost:3000).

@@ -23,9 +23,9 @@ We already have `pages/index.js`, so let’s create `pages/posts/first-post.js` 
 Create the `posts` directory under `pages`, and create a file called `first-post.js` inside with the following:
 
 ```jsx
-const FirstPost = () => <h1>First Post</h1>;
-
-export default FirstPost;
+export default function FirstPost() {
+  return <h1>First Post</h1>;
+}
 ```
 
 The component can have any name, but you must export it as a `default` export.

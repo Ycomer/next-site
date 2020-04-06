@@ -44,18 +44,18 @@ Next, replace the content of `pages/posts/first-post.js` with the following:
 ```jsx
 import Link from 'next/link';
 
-const FirstPost = () => (
-  <>
-    <h1>First Post</h1>
-    <p>
-      <Link href="/">
-        <a>Back to home</a>
-      </Link>
-    </p>
-  </>
-);
-
-export default FirstPost;
+export default function FirstPost() {
+  return (
+    <>
+      <h1>First Post</h1>
+      <p>
+        <Link href="/">
+          <a>Back to home</a>
+        </Link>
+      </p>
+    </>
+  );
+}
 ```
 
 As you can see, the `Link` component is similar to using `<a>` tags, but instead of `<a href="…">`, you use `<Link href="…">` and put an `<a>` tag inside.

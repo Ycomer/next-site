@@ -37,14 +37,16 @@ import Head from 'next/head';
 And add it to the `FirstPost` component. For now, we‘ll add just the `title` tag:
 
 ```jsx
-const FirstPost = () => (
-  <>
-    <Head>
-      <title>First Post</title>
-    </Head>
-    …
-  </>
-);
+export default function FirstPost() {
+  return (
+    <>
+      <Head>
+        <title>First Post</title>
+      </Head>
+      …
+    </>
+  );
+}
 ```
 
 Try accessing [localhost:3000/posts/first-post](http://localhost:3000/posts/first-post). The browser tab should now say “First Post”. By using your browser’s developer tools, you should see that the `title` tag is added to `<head>`.

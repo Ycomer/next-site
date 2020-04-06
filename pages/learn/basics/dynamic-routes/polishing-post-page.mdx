@@ -16,14 +16,16 @@ In `pages/posts/[id].js`, let’s add the `title` tag using the post data. Impor
 ```jsx
 import Head from 'next/head';
 
-const Post = ({ postData }) => (
-  <Layout>
-    <Head>
-      <title>{postData.title}</title>
-    </Head>
-    ...
-  </Layout>
-);
+export default function Post({ postData }) {
+  return (
+    <Layout>
+      <Head>
+        <title>{postData.title}</title>
+      </Head>
+      ...
+    </Layout>
+  );
+}
 ```
 
 ### Formatting the Date
@@ -50,13 +52,15 @@ And use it in `pages/posts/[id].js`:
 ```jsx
 import Date from '../../components/Date';
 
-const Post = ({ postData }) => (
-  <Layout>
-    ...
-    <Date dateString={postData.date} />
-    ...
-  </Layout>
-);
+export default function Post({ postData }) {
+  return (
+    <Layout>
+      ...
+      <Date dateString={postData.date} />
+      ...
+    </Layout>
+  );
+}
 ```
 
 You should now see the date written as **“January 1, 2020”**.
@@ -68,20 +72,22 @@ Finally, let’s add some CSS. Put everything under the `article` tag and use CS
 ```jsx
 import utilStyles from '../../styles/utils.module.css';
 
-const Post = ({ postData }) => (
-  <Layout>
-    <Head>
-      <title>{postData.title}</title>
-    </Head>
-    <article>
-      <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-      <div className={utilStyles.lightText}>
-        <Date dateString={postData.date} />
-      </div>
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-    </article>
-  </Layout>
-);
+export default function Post({ postData }) {
+  return (
+    <Layout>
+      <Head>
+        <title>{postData.title}</title>
+      </Head>
+      <article>
+        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+        <div className={utilStyles.lightText}>
+          <Date dateString={postData.date} />
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      </article>
+    </Layout>
+  );
+}
 ```
 
 The page should now look a little better:

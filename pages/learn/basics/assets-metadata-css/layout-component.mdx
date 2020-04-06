@@ -15,9 +15,9 @@ First, Let’s create a **Layout** component which will be common across all pag
 - Inside, create a file called `Layout.js` with the following content:
 
 ```jsx
-import Head from 'next/head';
-
-const Layout = ({ children }) => <div>{children}</div>;
+export default function Layout({ children }) {
+  return <div>{children}</div>;
+}
 
 export default Layout;
 ```
@@ -27,7 +27,9 @@ Then, in `pages/posts/first-post.js`, import `Layout` and make it the outer most
 ```jsx
 import Layout from '../../components/Layout';
 
-const FirstPost = () => <Layout>…</Layout>;
+export default function FirstPost() {
+  return <Layout>…</Layout>;
+}
 ```
 
 ### Adding CSS
@@ -55,11 +57,9 @@ To use this in `Layout`, you need to:
 ```jsx
 import styles from `./Layout.module.css`
 
-const Layout = ({ children }) => (
-  <div className={styles.container}>{children}</div>
-)
-
-export default Layout
+export default function Layout({ children }) {
+  return <div className={styles.container}>{children}</div>
+}
 ```
 
 If you go to [localhost:3000/posts/first-post](http://localhost:3000/posts/first-post) now, you should see that the text is now inside a centered container:

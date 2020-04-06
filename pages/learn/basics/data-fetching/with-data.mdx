@@ -41,7 +41,7 @@ How does it work? Well, in Next.js, when you export a page component, you can al
 - Inside the function, you can fetch external data and pass that as the props of the page.
 
 ```jsx
-const Home = (props) => ...
+export default function Home(props) { ... }
 
 export async function getStaticProps() {
   // Get external data from the file system, API, DB, etc.
@@ -53,8 +53,6 @@ export async function getStaticProps() {
     props: ...
   }
 }
-
-export default Home
 ```
 
 Essentially, `getStaticProps` allows you to tell Next.js: _“Hey, this page has some data dependencies — so when you pre-render this page at build time, make sure to resolve them first!”_

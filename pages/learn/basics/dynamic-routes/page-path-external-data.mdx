@@ -38,7 +38,9 @@ In `[id].js`, we’ll write code that will render a post page — just like othe
 ```jsx
 import Layout from '../../components/Layout';
 
-const Post = () => <Layout>...</Layout>;
+export default function Post() {
+  return <Layout>...</Layout>;
+}
 
 export default Post;
 ```
@@ -48,13 +50,13 @@ Now, here’s what’s new: We’ll export an async function called `getStaticPa
 ```jsx
 import Layout from '../../components/Layout';
 
-const Post = () => <Layout>...</Layout>;
+export default function Post() {
+  return <Layout>...</Layout>;
+}
 
 export async function getStaticPaths() {
   // Return a list of possible value for id
 }
-
-export default Post;
 ```
 
 In our case, `id` can be `dps` or `pre-rendering`. So we need it to return an array `['dps', 'pre-rendering']`.
@@ -64,7 +66,9 @@ Finally, we need to implement `getStaticProps` again - this time, to fetch neces
 ```jsx
 import Layout from '../../components/Layout';
 
-const Post = () => <Layout>...</Layout>;
+export default function Post() {
+  return <Layout>...</Layout>;
+}
 
 export async function getStaticPaths() {
   // Return a list of possible value for id
@@ -73,8 +77,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   // Fetch necessary data for the blog post using params.id
 }
-
-export default Post;
 ```
 
 Here’s a graphic summary of what we just talked about:

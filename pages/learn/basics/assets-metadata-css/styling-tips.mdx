@@ -44,18 +44,18 @@ And use `classnames` like this:
 import styles from './Alert.module.css';
 import cn from 'classnames';
 
-const Alert = ({ type }) => (
-  <div
-    className={cn({
-      [styles.success]: type === 'success',
-      [styles.error]: type === 'error'
-    })}
-  >
-    {children}
-  </div>
-);
-
-export default Layout;
+export default function Alert({ type }) {
+  return (
+    <div
+      className={cn({
+        [styles.success]: type === 'success',
+        [styles.error]: type === 'error'
+      })}
+    >
+      {children}
+    </div>
+  );
+}
 ```
 
 ### Customizing PostCSS Config

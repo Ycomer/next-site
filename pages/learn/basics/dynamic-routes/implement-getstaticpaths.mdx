@@ -19,7 +19,9 @@ Then, add this to `[id].js`. We’ll fill in `...` later.
 ```jsx
 import Layout from '../../components/Layout';
 
-const Post = () => <Layout>...</Layout>;
+export default function Post() {
+  return <Layout>...</Layout>;
+}
 
 export default Post;
 ```
