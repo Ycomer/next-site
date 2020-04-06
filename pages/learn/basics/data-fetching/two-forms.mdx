@@ -64,10 +64,7 @@ You should ask yourself: "Can I pre-render this page **ahead** of a user's reque
 
 On the other hand, Static Generation is **not** a good idea if you cannot pre-render a page ahead of a user's request. Maybe your page shows frequently updated data, and the page content changes on every request.
 
-In cases like this, you can do one of the following:
-
-- Use Static Generation with **Client-side Rendering:** You can skip pre-rendering some parts of a page and then use client-side JavaScript to populate them. To learn more about this approach, check out the <Link href="/docs/[...slug]" as="/docs/basic-features/data-fetching#fetching-data-on-the-client-side"><a>Data Fetching documentation</a></Link>.
-- Use **Server-Side Rendering:** Next.js pre-renders a page on each request. It will be slower, but the pre-rendered page will always be up-to-date.
+In that case, you can use **Server-Side Rendering**. It will be slower, but the pre-rendered page will always be up-to-date. Or you can skip pre-rendering and then use client-side JavaScript to populate data.
 
 ### We’ll Focus on Static Generation
 

@@ -49,32 +49,16 @@ This is possible because `getStaticProps` runs **only on the server-side**. It w
 
 Because it’s meant to be run at build time, you won’t be able to use data that’s only available during request time, such as query parameters or HTTP headers.
 
-### Only allowed in a page
+### Only Allowed in a Page
 
 `getStaticProps` can only be exported from a **page**. You can’t export it from non-page files.
 
 One of the reasons for this restriction is that React needs to have all the required data before the page is rendered.
 
-### When should I use `getStaticProps`?
+### What If I Need to Fetch Data at Request Time?
 
-You should use `getStaticProps` if:
+Static Generation is **not** a good idea if you cannot pre-render a page ahead of a user's request. Maybe your page shows frequently updated data, and the page content changes on every request.
 
-- The data required to render the page is available at build time ahead of a user’s request.
-- The data comes from headless CMS.
-- The data can be publicly cached (not user-specific).
-- The page must be pre-rendered (for SEO) and be very fast — `getStaticProps` generates HTML and JSON files, both of which can be cached by a CDN for performance.
-
-### What if I need to fetch data at request time instead of build time?
-
-Then you have two choices:
-
-- Use `getServerSideProps` to do **server-side rendering**, which we talked about earlier. To learn more, take a look at <Link href="/docs/[...slug]" as="/docs/basic-features/data-fetching#getserversideprops-server-side-rendering"><a>our documentation</a></Link>.
-- Do not pre-render the data — instead, pre-render the loading states. Then, fetch the data on the client side and display it when ready. To learn more, <Link href="/docs/[...slug]" as="/docs/basic-features/data-fetching#fetching-data-on-the-client-side"><a>take a look at our documentation</a></Link>.
-
-### That’s It!
-
-In the next lesson, we’ll create pages for each blog post using dynamic routes.
-
-> Again, You can get in-depth information about `getStaticProps` on <Link href="/docs/[...slug]" as="/docs/basic-features/data-fetching"><a>our documentation</a></Link>.
+In cases like this, you can try **Server-side Rendering** or skipping pre-rendering. Let’s talk about these strategies before we move on to the next lesson.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
