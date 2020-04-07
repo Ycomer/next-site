@@ -1,6 +1,6 @@
-import Layout from '../../../../components/learn/Layout';
-import Image from '../../../../components/image';
-import Link from 'next/link';
+import Layout from '../../../../components/learn/Layout'
+import Image from '../../../../components/image'
+import Link from 'next/link'
 
 export const meta = {
   title: 'Assets, Metadata, and CSS',
@@ -8,7 +8,7 @@ export const meta = {
   lessonId: 'assets-metadata-css',
   stepId: 'styling-tips',
   subtitle: 'Styling Tips'
-};
+}
 
 Here are some styling tips that might be helpful.
 
@@ -41,8 +41,8 @@ You can first write a CSS module (e.g. `Alert.module.css`) like this:
 And use `classnames` like this:
 
 ```jsx
-import styles from './Alert.module.css';
-import cn from 'classnames';
+import styles from './Alert.module.css'
+import cn from 'classnames'
 
 export default function Alert({ type }) {
   return (
@@ -54,7 +54,7 @@ export default function Alert({ type }) {
     >
       {children}
     </div>
-  );
+  )
 }
 ```
 
@@ -77,13 +77,16 @@ module.exports = {
       ? [
           '@fullhuman/postcss-purgecss',
           {
-            content: ['./pages/**/*.{js,jsx,ts,tsx}', './components/**/*.{js,jsx,ts,tsx}'],
+            content: [
+              './pages/**/*.{js,jsx,ts,tsx}',
+              './components/**/*.{js,jsx,ts,tsx}'
+            ],
             defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
           }
         ]
       : undefined
   ]
-};
+}
 ```
 
 > To learn more about custom PostCSS configuration, check out <Link href="/docs/[...slug]" as="/docs/advanced-features/customizing-postcss-config"><a>our documentation</a></Link>.
@@ -103,4 +106,4 @@ npm install sass
 - To learn more about CSS Modules, take a look at [its documentation](https://github.com/css-modules/css-modules).
 - To learn more about Next.js’s built-in CSS Support, check out <Link href="/docs/[...slug]" as="/docs/basic-features/built-in-css-support"><a>our documentation</a></Link>.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

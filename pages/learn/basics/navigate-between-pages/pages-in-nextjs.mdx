@@ -1,5 +1,5 @@
-import Layout from '../../../../components/learn/Layout';
-import Image from '../../../../components/image';
+import Layout from '../../../../components/learn/Layout'
+import Image from '../../../../components/image'
 
 export const meta = {
   title: 'Navigate Between Pages',
@@ -7,7 +7,7 @@ export const meta = {
   lessonId: 'navigate-between-pages',
   stepId: 'pages-in-nextjs',
   subtitle: 'Pages in Next.js'
-};
+}
 
 Let’s talk about **Pages**. In Next.js, you can create a page by exporting a React component from a file in the `pages` directory.
 
@@ -24,7 +24,7 @@ Create the `posts` directory under `pages`, and create a file called `first-post
 
 ```jsx
 export default function FirstPost() {
-  return <h1>First Post</h1>;
+  return <h1>First Post</h1>
 }
 ```
 
@@ -45,4 +45,4 @@ This is how you can create different pages in Next.js. Simply create a JS file u
 
 Next, let’s add **a link** to each page so you can go back and forth between the pages.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

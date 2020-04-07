@@ -1,6 +1,6 @@
-import Layout from '../../../../components/learn/Layout';
-import Image from '../../../../components/image';
-import Link from 'next/link';
+import Layout from '../../../../components/learn/Layout'
+import Image from '../../../../components/image'
+import Link from 'next/link'
 
 export const meta = {
   title: 'Data Fetching',
@@ -8,7 +8,7 @@ export const meta = {
   lessonId: 'data-fetching',
   stepId: 'two-forms',
   subtitle: 'Two Forms of Pre-rendering'
-};
+}
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
 
@@ -70,4 +70,4 @@ In that case, you can use **Server-Side Rendering**. It will be slower, but the 
 
 In this lesson, we’ll focus on Static Generation. On the next page, we’ll talk about Static Generation **with and without data**.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

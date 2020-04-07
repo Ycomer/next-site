@@ -1,5 +1,5 @@
-import Layout from '../../../../components/learn/Layout';
-import Image from '../../../../components/image';
+import Layout from '../../../../components/learn/Layout'
+import Image from '../../../../components/image'
 
 export const meta = {
   title: 'Dynamic Routes',
@@ -7,14 +7,14 @@ export const meta = {
   lessonId: 'dynamic-routes',
   stepId: 'polishing-post-page',
   subtitle: 'Polishing the Post Page'
-};
+}
 
 ### Adding `title` to the Post Page
 
 In `pages/posts/[id].js`, let’s add the `title` tag using the post data. Import `next/head` and add the `title` tag:
 
 ```jsx
-import Head from 'next/head';
+import Head from 'next/head'
 
 export default function Post({ postData }) {
   return (
@@ -24,7 +24,7 @@ export default function Post({ postData }) {
       </Head>
       ...
     </Layout>
-  );
+  )
 }
 ```
 
@@ -39,18 +39,18 @@ npm install date-fns
 Next, create the `Date` component at `components/Date.js`:
 
 ```jsx
-import { parseISO, format } from 'date-fns';
+import { parseISO, format } from 'date-fns'
 
 export default function Date({ dateString }) {
-  const date = parseISO(dateString);
-  return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>;
+  const date = parseISO(dateString)
+  return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>
 }
 ```
 
 And use it in `pages/posts/[id].js`:
 
 ```jsx
-import Date from '../../components/Date';
+import Date from '../../components/Date'
 
 export default function Post({ postData }) {
   return (
@@ -59,7 +59,7 @@ export default function Post({ postData }) {
       <Date dateString={postData.date} />
       ...
     </Layout>
-  );
+  )
 }
 ```
 
@@ -70,7 +70,7 @@ You should now see the date written as **“January 1, 2020”**.
 Finally, let’s add some CSS. Put everything under the `article` tag and use CSS modules like below:
 
 ```jsx
-import utilStyles from '../../styles/utils.module.css';
+import utilStyles from '../../styles/utils.module.css'
 
 export default function Post({ postData }) {
   return (
@@ -86,7 +86,7 @@ export default function Post({ postData }) {
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>
-  );
+  )
 }
 ```
 
@@ -103,4 +103,4 @@ The page should now look a little better:
 
 Great work! We’ll polish the index page next and we’ll be done!
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -1,5 +1,5 @@
-import Layout from '../../../../components/learn/Layout';
-import Image from '../../../../components/image';
+import Layout from '../../../../components/learn/Layout'
+import Image from '../../../../components/image'
 
 export const meta = {
   title: 'Assets, Metadata, and CSS',
@@ -7,7 +7,7 @@ export const meta = {
   lessonId: 'assets-metadata-css',
   stepId: 'layout-component',
   subtitle: 'Layout Component'
-};
+}
 
 First, Let’s create a **Layout** component which will be common across all pages.
 
@@ -16,19 +16,19 @@ First, Let’s create a **Layout** component which will be common across all pag
 
 ```jsx
 export default function Layout({ children }) {
-  return <div>{children}</div>;
+  return <div>{children}</div>
 }
 
-export default Layout;
+export default Layout
 ```
 
 Then, in `pages/posts/first-post.js`, import `Layout` and make it the outer most component.
 
 ```jsx
-import Layout from '../../components/Layout';
+import Layout from '../../components/Layout'
 
 export default function FirstPost() {
-  return <Layout>…</Layout>;
+  return <Layout>…</Layout>
 }
 ```
 
@@ -92,4 +92,4 @@ Furthermore, Next.js’s code splitting feature works on CSS Modules as well. It
 
 CSS Modules are also more performant than many CSS-in-JS libraries because CSS Modules are evaluated and transformed by Webpack at **build time**. They also don’t create extra layers of React components.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -1,5 +1,5 @@
-import Layout from '../../../../components/learn/Layout';
-import Link from 'next/link';
+import Layout from '../../../../components/learn/Layout'
+import Link from 'next/link'
 
 export const meta = {
   title: 'Dynamic Routes',
@@ -7,7 +7,7 @@ export const meta = {
   lessonId: 'dynamic-routes',
   stepId: 'dynamic-routes-details',
   subtitle: 'Dynamic Routes Details'
-};
+}
 
 You can get in-depth information about dynamic routes on our documentation:
 
@@ -68,7 +68,7 @@ Dynamic routes can be extended to catch all paths by adding three dots (`...`) i
 If you do this, in `getStaticPaths`, you must return an array as the value of the `id` key like so:
 
 ```js
-[
+;[
   {
     params: {
       // Statically Generates /posts/a/b/c
@@ -76,7 +76,7 @@ If you do this, in `getStaticPaths`, you must return an array as the value of th
     }
   }
   //...
-];
+]
 ```
 
 And `params.id` will be an array in `getStaticProps`:
@@ -100,7 +100,7 @@ To create a custom 404 page you can create a `pages/404.js` file. This file is s
 ```jsx
 // pages/404.js
 export default function Custom404() {
-  return <h1>404 - Page Not Found</h1>;
+  return <h1>404 - Page Not Found</h1>
 }
 ```
 
@@ -119,4 +119,4 @@ We have created several examples to illustrate `getStaticProps` and `getStaticPa
 
 In the next and the final lesson, we’ll talk about the API Routes feature for Next.js.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -1,11 +1,11 @@
-import Layout from '../../../../components/learn/Layout';
-import Link from 'next/link';
+import Layout from '../../../../components/learn/Layout'
+import Link from 'next/link'
 
 export const meta = {
   title: 'Navigate Between Pages',
   courseId: 'basics',
   lessonId: 'navigate-between-pages'
-};
+}
 
 So far, the Next.js app we created only have one page. If we’re going to build a build app (here’s the [the final result](https://next-learn-starter.now.sh/)), we need to add more pages. Let’s talk about how to do that in this lesson.
 
@@ -19,4 +19,4 @@ In this lesson, you will:
 
 > If you’re looking for detailed documentation on Next.js routing, take a look <Link href="/docs/[...slug]" as="/docs/routing/introduction"><a>here</a></Link>.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

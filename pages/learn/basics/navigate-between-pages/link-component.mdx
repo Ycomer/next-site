@@ -1,5 +1,5 @@
-import Layout from '../../../../components/learn/Layout';
-import Image from '../../../../components/image';
+import Layout from '../../../../components/learn/Layout'
+import Image from '../../../../components/image'
 
 export const meta = {
   title: 'Navigate Between Pages',
@@ -15,7 +15,7 @@ export const meta = {
     ],
     correctAnswer: 'Both of the above.'
   }
-};
+}
 
 In a Next.js app, if you’re creating a link to **some other page** in the same Next.js app, you should use the special `Link` component. We’ll learn how to use `Link` first, and then talk about why it’s necessary.
 
@@ -24,7 +24,7 @@ In a Next.js app, if you’re creating a link to **some other page** in the same
 First, in `pages/index.js`, import the `Link` component from `next/link` by adding this line at the top:
 
 ```js
-import Link from 'next/link';
+import Link from 'next/link'
 ```
 
 Then modify this line in the `h1` tag:
@@ -42,7 +42,7 @@ Read <Link href="/posts/first-post"><a>this page!</a></Link>
 Next, replace the content of `pages/posts/first-post.js` with the following:
 
 ```jsx
-import Link from 'next/link';
+import Link from 'next/link'
 
 export default function FirstPost() {
   return (
@@ -54,7 +54,7 @@ export default function FirstPost() {
         </Link>
       </p>
     </>
-  );
+  )
 }
 ```
 
@@ -75,4 +75,4 @@ It’s working! But you might be wondering: “Why is it necessary to use `<Link
 
 Before I give you the answer, try guessing why `<Link>` is necessary. Choose the one that you think is correct from below:
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

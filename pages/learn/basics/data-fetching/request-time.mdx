@@ -1,6 +1,6 @@
-import Layout from '../../../../components/learn/Layout';
-import Link from 'next/link';
-import Image from '../../../../components/image';
+import Layout from '../../../../components/learn/Layout'
+import Link from 'next/link'
+import Image from '../../../../components/image'
 
 export const meta = {
   title: 'Data Fetching',
@@ -8,7 +8,7 @@ export const meta = {
   lessonId: 'data-fetching',
   stepId: 'request-time',
   subtitle: 'Fetching Data at Request Time'
-};
+}
 
 If you need to fetch data at **request time** instead of at build time, you can try **Server-side Rendering**:
 
@@ -33,7 +33,7 @@ export async function getServerSideProps(context) {
     props: {
       // props for your component
     }
-  };
+  }
 }
 ```
 
@@ -64,14 +64,14 @@ This approach works well for user dashboard pages, for example. Because a dashbo
 The team behind Next.js has created a React hook for data fetching called [**SWR**](https://swr.now.sh/). We highly recommend it If you’re fetching data on the client side. It handles caching, revalidation, focus tracking, refetching on interval, and more. We won’t cover the details here, but here’s an example usage:
 
 ```jsx
-import useSWR from 'swr';
+import useSWR from 'swr'
 
 function Profile() {
-  const { data, error } = useSWR('/api/user', fetch);
+  const { data, error } = useSWR('/api/user', fetch)
 
-  if (error) return <div>failed to load</div>;
-  if (!data) return <div>loading...</div>;
-  return <div>hello {data.name}!</div>;
+  if (error) return <div>failed to load</div>
+  if (!data) return <div>loading...</div>
+  return <div>hello {data.name}!</div>
 }
 ```
 
@@ -83,4 +83,4 @@ In the next lesson, we’ll create pages for each blog post using dynamic routes
 
 > Again, You can get in-depth information about `getStaticProps` and `getServerSideProps` on <Link href="/docs/[...slug]" as="/docs/basic-features/data-fetching"><a>our documentation</a></Link>.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

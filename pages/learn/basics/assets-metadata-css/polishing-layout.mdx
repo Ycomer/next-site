@@ -1,5 +1,5 @@
-import Layout from '../../../../components/learn/Layout';
-import Image from '../../../../components/image';
+import Layout from '../../../../components/learn/Layout'
+import Image from '../../../../components/image'
 
 export const meta = {
   title: 'Assets, Metadata, and CSS',
@@ -7,7 +7,7 @@ export const meta = {
   lessonId: 'assets-metadata-css',
   stepId: 'polishing-layout',
   subtitle: 'Polishing Layout'
-};
+}
 
 So far, we’ve only added minimal React and CSS code just to illustrate concepts such as CSS Modules. Before we move on to our next lesson (data fetching), let’s update our code to use more _polished_ React and CSS code.
 
@@ -120,20 +120,23 @@ Fourth, copy the following code to `components/Layout.js` and **change** `Your N
 - “Back to home” link at the bottom if `home` is `false`
 
 ```jsx
-import Head from 'next/head';
-import styles from './Layout.module.css';
-import utilStyles from '../styles/utils.module.css';
-import Link from 'next/link';
+import Head from 'next/head'
+import styles from './Layout.module.css'
+import utilStyles from '../styles/utils.module.css'
+import Link from 'next/link'
 
-const name = 'Your Name';
-export const siteTitle = 'Next.js Sample Website';
+const name = 'Your Name'
+export const siteTitle = 'Next.js Sample Website'
 
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Learn how to build a personal website using Next.js" />
+        <meta
+          name="description"
+          content="Learn how to build a personal website using Next.js"
+        />
         <meta
           property="og:image"
           content={`https://og-image.now.sh/${encodeURI(
@@ -179,7 +182,7 @@ export default function Layout({ children, home }) {
         </div>
       )}
     </div>
-  );
+  )
 }
 ```
 
@@ -188,9 +191,9 @@ export default function Layout({ children, home }) {
 Finally, update `pages/index.js` as follows:
 
 ```jsx
-import Head from 'next/head';
-import Layout, { siteTitle } from '../components/Layout';
-import utilStyles from '../styles/utils.module.css';
+import Head from 'next/head'
+import Layout, { siteTitle } from '../components/Layout'
+import utilStyles from '../styles/utils.module.css'
 
 export default function Home() {
   return (
@@ -206,7 +209,7 @@ export default function Home() {
         </p>
       </section>
     </Layout>
-  );
+  )
 }
 ```
 
@@ -225,4 +228,4 @@ That’s it! We now have the polished layout code in place to move onto our data
 
 Before we wrap up this lesson, let’s talk about some helpful techniques related to Next.js’s CSS support on the next page.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -1,11 +1,11 @@
-import Layout from '../../../../components/learn/Layout';
-import Link from 'next/link';
+import Layout from '../../../../components/learn/Layout'
+import Link from 'next/link'
 
 export const meta = {
   title: 'Assets, Metadata, and CSS',
   courseId: 'basics',
   lessonId: 'assets-metadata-css'
-};
+}
 
 The second page we added has no styles, so let’s add some CSS. We’ll utilize Next.js’s built-in support for CSS Modules. We’ll also talk about how Next.js handles static assets like images and page metadata like `title` tags.
 
@@ -21,4 +21,4 @@ In this lesson, you’ll learn:
 
 > If you’re looking for detailed documentation on Next.js styling, take a look <Link href="/docs/[...slug]" as="/docs/routing/introduction"><a>here</a></Link>.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

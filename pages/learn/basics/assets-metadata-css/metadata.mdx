@@ -1,7 +1,7 @@
-import Layout from '../../../../components/learn/Layout';
-import AnswerBox from '../../../../components/learn/AnswerBox';
-import Image from '../../../../components/image';
-import Link from 'next/link';
+import Layout from '../../../../components/learn/Layout'
+import AnswerBox from '../../../../components/learn/AnswerBox'
+import Image from '../../../../components/image'
+import Link from 'next/link'
 
 export const meta = {
   title: 'Assets, Metadata, and CSS',
@@ -9,7 +9,7 @@ export const meta = {
   lessonId: 'assets-metadata-css',
   stepId: 'metadata',
   subtitle: 'Metadata'
-};
+}
 
 Next, let’s talk about page **metadata** such as `<title>` tags.
 
@@ -31,7 +31,7 @@ In Next.js, you can import `Head` from `next/head` and use it anywhere in the co
 We don’t yet have `<Head>` for `pages/posts/first-page.js`, so let’s add it. First, import it from `next/head`:
 
 ```js
-import Head from 'next/head';
+import Head from 'next/head'
 ```
 
 And add it to the `FirstPost` component. For now, we‘ll add just the `title` tag:
@@ -45,7 +45,7 @@ export default function FirstPost() {
       </Head>
       …
     </>
-  );
+  )
 }
 ```
 
@@ -55,4 +55,4 @@ Try accessing [localhost:3000/posts/first-post](http://localhost:3000/posts/firs
 >
 > Also, if you want to add the `lang` attribute to the `html` tag, you can do so by creating a custom `Document` component. Learn more on <Link href="/docs/[...slug]" as="/docs/advanced-features/custom-document"><a>our documentation</a></Link>.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

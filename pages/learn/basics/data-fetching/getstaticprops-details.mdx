@@ -1,5 +1,5 @@
-import Layout from '../../../../components/learn/Layout';
-import Link from 'next/link';
+import Layout from '../../../../components/learn/Layout'
+import Link from 'next/link'
 
 export const meta = {
   title: 'Data Fetching',
@@ -7,7 +7,7 @@ export const meta = {
   lessonId: 'data-fetching',
   stepId: 'getstaticprops-details',
   subtitle: 'getStaticProps Details'
-};
+}
 
 You can get in-depth information about `getStaticProps` on <Link href="/docs/[...slug]" as="/docs/basic-features/data-fetching"><a>our documentation</a></Link>. But here are some essential information you should know about `getStaticProps`.
 
@@ -16,13 +16,13 @@ You can get in-depth information about `getStaticProps` on <Link href="/docs/[..
 In our `lib/posts.js`, we’ve implemented `getSortedPostsData` which fetches data from the file system. But you can fetch the data from other sources, like an external API endpoint, and it’ll work just fine:
 
 ```js
-import fetch from 'node-fetch';
+import fetch from 'node-fetch'
 
 export async function getSortedPostsData() {
   // Instead of the file system,
   // fetch post data from an external API endpoint
-  const posts = await fetch('..');
-  return res.json();
+  const posts = await fetch('..')
+  return res.json()
 }
 ```
 
@@ -61,4 +61,4 @@ Static Generation is **not** a good idea if you cannot pre-render a page ahead o
 
 In cases like this, you can try **Server-side Rendering** or skipping pre-rendering. Let’s talk about these strategies before we move on to the next lesson.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
