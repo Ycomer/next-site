@@ -1,5 +1,5 @@
-import Layout from '../../../../components/learn/Layout';
-import Image from '../../../../components/image';
+import Layout from '../../../../components/learn/Layout'
+import Image from '../../../../components/image'
 
 export const meta = {
   title: 'Dynamic Routes',
@@ -7,7 +7,7 @@ export const meta = {
   lessonId: 'dynamic-routes',
   stepId: 'implement-getstaticprops',
   subtitle: 'Implement getStaticProps'
-};
+}
 
 We need to fetch necessary data to render the post with the given `id`.
 
@@ -15,36 +15,36 @@ To do so, open `lib/posts.js` again and and add this function. This will return 
 
 ```jsx
 export function getPostData(id) {
-  const fullPath = path.join(postsDirectory, `${id}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fullPath = path.join(postsDirectory, `${id}.md`)
+  const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   // Use gray-matter to parse the post metadata section
-  const { data } = matter(fileContents);
+  const matterResult = matter(fileContents)
 
   // Combine the data with the id
   return {
     id,
-    ...data
-  };
+    ...matterResult.data
+  }
 }
 ```
 
 Finally, in `[id].js`, we’ll import this function:
 
 ```js
-import { getAllPostIds, getPostData } from '../../lib/posts';
+import { getAllPostIds, getPostData } from '../../lib/posts'
 ```
 
 And create `getStaticProps` which calls this function:
 
 ```jsx
 export async function getStaticProps({ params }) {
-  const postData = getPostData(params.id);
+  const postData = getPostData(params.id)
   return {
     props: {
       postData
     }
-  };
+  }
 }
 ```
 
@@ -60,7 +60,7 @@ export default function Post({ postData }) {
       <br />
       {postData.date}
     </Layout>
-  );
+  )
 }
 ```
 
@@ -93,4 +93,4 @@ Great! We successfully generated dynamic pages. Again, here’s the graphical su
 
 But we still haven’t displayed the blog **markdown content**. So let’s do this next.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

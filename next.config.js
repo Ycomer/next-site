@@ -86,7 +86,6 @@ const basicsLessonsRedirect = [].concat(
 const excelLessonsRedirect = [].concat(
   ...[
     ['static-html-export', '/docs/advanced-features/static-html-export'],
-    ['typescript', '/docs/basic-features/typescript'],
     ['amp', '/docs/advanced-features/amp-support/introduction'],
     ['automatic-static-optimization', '/docs/advanced-features/automatic-static-optimization'],
     ['automatic-prerendering', '/docs/advanced-features/automatic-static-optimization']

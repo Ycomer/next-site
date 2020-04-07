@@ -1,5 +1,5 @@
-import Layout from '../../../../components/learn/Layout';
-import Link from 'next/link';
+import Layout from '../../../../components/learn/Layout'
+import Link from 'next/link'
 
 export const meta = {
   title: 'API Routes',
@@ -7,13 +7,17 @@ export const meta = {
   lessonId: 'api-routes',
   stepId: 'next-steps',
   subtitle: 'Next Steps'
-};
+}
 
 Congratulations on finishing all the basics lessons! Here are some recommended steps:
 
 ### Share Your Next.js App
 
 We encourage you to share the app you built in this tutorial on Twitter. Please mention [@zeithq](https://twitter.com/zeithq) if you do so we can take a look! We’d love to get your feedback on this tutorial as well.
+
+### Use TypeScript with Next.js
+
+If you prefer using [TypeScript](https://www.typescriptlang.org/), you can learn <Link href="/learn/excel/typescript"><a>how to use TypeScript with Next.js from here</a></Link>.
 
 ### What to Learn Next
 
@@ -24,14 +28,11 @@ Check out the following documentation to learn more:
       <strong>Data Fetching</strong>
     </a>
   </Link>
-  : Learn in depth about data fetching.
-- <Link href="/docs/[...slug]" as="/docs/basic-features/typescript">
-    <a>
-      <strong>TypeScript</strong>
-    </a>
-  </Link>
-  : Next.js provides an integrated TypeScript support out of the box.
-- <Link href="/docs/[...slug]" as="/docs/api-reference/next.config.js/introduction">
+  : Learn in depth about data fetching.ø
+- <Link
+    href="/docs/[...slug]"
+    as="/docs/api-reference/next.config.js/introduction"
+  >
     <a>
       <strong>Next.js Configuration</strong>
     </a>
@@ -42,7 +43,10 @@ Check out the following documentation to learn more:
   >
     <a>Environment Variables</a>
   </Link> documentation might be helpful.
-- <Link href="/docs/[...slug]" as="/docs/advanced-features/amp-support/introduction">
+- <Link
+    href="/docs/[...slug]"
+    as="/docs/advanced-features/amp-support/introduction"
+  >
     <a>
       <strong>AMP Support</strong>
     </a>
@@ -59,4 +63,4 @@ Check out the following documentation to learn more:
 
 If you have questions about anything related to Next.js, you're always welcome to ask our community on [GitHub Discussions](https://github.com/zeit/next.js/discussions).
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

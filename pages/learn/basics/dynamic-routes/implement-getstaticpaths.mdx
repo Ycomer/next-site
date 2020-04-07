@@ -1,5 +1,5 @@
-import Layout from '../../../../components/learn/Layout';
-import Image from '../../../../components/image';
+import Layout from '../../../../components/learn/Layout'
+import Image from '../../../../components/image'
 
 export const meta = {
   title: 'Dynamic Routes',
@@ -7,7 +7,7 @@ export const meta = {
   lessonId: 'dynamic-routes',
   stepId: 'implement-getstaticpaths',
   subtitle: 'Implement getStaticPaths'
-};
+}
 
 First, let’s set up the files:
 
@@ -17,34 +17,32 @@ First, let’s set up the files:
 Then, add this to `[id].js`. We’ll fill in `...` later.
 
 ```jsx
-import Layout from '../../components/Layout';
+import Layout from '../../components/Layout'
 
 export default function Post() {
-  return <Layout>...</Layout>;
+  return <Layout>...</Layout>
 }
-
-export default Post;
 ```
 
 Then, open `lib/posts.js` and add this function. This will return the list of file names (excluding `.md`) in the `posts` directory:
 
 ```jsx
 export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs.readdirSync(postsDirectory)
   return fileNames.map(fileName => {
     return {
       params: {
         id: fileName.replace(/\.md$/, '')
       }
-    };
-  });
+    }
+  })
 }
 ```
 
 **Important**: The returned list is _not_ just an array of strings — it **must** be an array of objects that like below. Each object must have the `params` key and contain an object with the `id` key (because we’re using `[id]` in the file name).
 
 ```js
-[
+;[
   {
     params: {
       id: 'dps'
@@ -55,24 +53,24 @@ export function getAllPostIds() {
       id: 'pre-rendering'
     }
   }
-];
+]
 ```
 
 Finally, in `[id].js`, we’ll import this function:
 
 ```js
-import { getAllPostIds } from '../../lib/posts';
+import { getAllPostIds } from '../../lib/posts'
 ```
 
 And create `getStaticPaths` which calls this function:
 
 ```jsx
 export async function getStaticPaths() {
-  const paths = getAllPostIds();
+  const paths = getAllPostIds()
   return {
     paths,
     fallback: false
-  };
+  }
 }
 ```
 
@@ -81,4 +79,4 @@ export async function getStaticPaths() {
 
 We’re almost done — but we still need to implement `getStaticProps`. Let’s do that on the next page!
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

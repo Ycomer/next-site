@@ -1,5 +1,5 @@
-import Layout from '../../../../components/learn/Layout';
-import Link from 'next/link';
+import Layout from '../../../../components/learn/Layout'
+import Link from 'next/link'
 
 export const meta = {
   title: 'API Routes',
@@ -7,7 +7,7 @@ export const meta = {
   lessonId: 'api-routes',
   stepId: 'creating-api-routes',
   subtitle: 'Creating API Routes'
-};
+}
 
 API Routes let you create an API endpoint inside a Next.js app. You can do so by creating a **function** inside the `pages/api` directory that has the following format:
 
@@ -15,7 +15,7 @@ API Routes let you create an API endpoint inside a Next.js app. You can do so by
 // req = request data, res = response data
 export default (req, res) => {
   // ...
-};
+}
 ```
 
 They can be deployed as Serverless Functions (also known as Lambdas). If you deploy on ZEIT Now, they’ll automatically be converted to Serverless Functions.
@@ -26,8 +26,8 @@ Let’s try it out. Create a file called `hello.js` in `pages/api` with the foll
 
 ```js
 export default (req, res) => {
-  res.status(200).json({ text: 'Hello' });
-};
+  res.status(200).json({ text: 'Hello' })
+}
 ```
 
 Try accessing it at [localhost:3000/api/hello](http://localhost:3000/api/hello). You should see `{"text":"Hello"}`. Note that:
@@ -37,4 +37,4 @@ Try accessing it at [localhost:3000/api/hello](http://localhost:3000/api/hello).
 
 That’s it! Before we wrap up this lesson, let’s talk about some tips for using API Routes on the next page.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -1,5 +1,5 @@
-import Layout from '../../../../components/learn/Layout';
-import Image from '../../../../components/image';
+import Layout from '../../../../components/learn/Layout'
+import Image from '../../../../components/image'
 
 export const meta = {
   title: 'Dynamic Routes',
@@ -7,7 +7,7 @@ export const meta = {
   lessonId: 'dynamic-routes',
   stepId: 'polishing-index-page',
   subtitle: 'Polishing the Index Page'
-};
+}
 
 As the final step, let’s update our index page (`pages/index.js`).
 
@@ -26,14 +26,14 @@ As you can see, you need to use `[id]` for `href` and the actual path (`dps`) fo
 Let’s implement it. First, import `Link` and `Date` in `posts/index.js`:
 
 ```js
-import Link from 'next/link';
-import Date from '../components/Date';
+import Link from 'next/link'
+import Date from '../components/Date'
 ```
 
 Then, near the bottom of the `Home` component, replace the `li` tag with the following:
 
 ```jsx
-<li className={utilStyles.listItem}>
+<li className={utilStyles.listItem} key={id}>
   <Link href="/posts/[id]" as={`/posts/${id}`}>
     <a>{title}</a>
   </Link>
@@ -57,4 +57,4 @@ It should now have the links to each article:
 
 That’s it! Before we wrap up this lesson, let’s talk about some tips for using dynamic routes on the next page.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

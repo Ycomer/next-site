@@ -1,5 +1,5 @@
-import Layout from '../../../../components/learn/Layout';
-import Link from 'next/link';
+import Layout from '../../../../components/learn/Layout'
+import Link from 'next/link'
 
 export const meta = {
   title: 'API Routes',
@@ -7,7 +7,7 @@ export const meta = {
   lessonId: 'api-routes',
   stepId: 'api-routes-details',
   subtitle: 'API Routes Details'
-};
+}
 
 You can get in-depth information about API Routes on <Link href="/docs/[...slug]" as="/docs/api-routes/dynamic-api-routes"><a>our documentation</a></Link>. But here are some essential information you should know about API Routes.
 
@@ -23,9 +23,9 @@ A good use case for API Routes is handling form input. For example, you can crea
 
 ```js
 export default (req, res) => {
-  const email = res.body.email;
+  const email = res.body.email
   // Then save email to your database, etc...
-};
+}
 ```
 
 ### Preview Mode
@@ -42,4 +42,4 @@ API Routes can be dynamic, just like regular pages. Take a look at our <Link hre
 
 We’re done! In the next and the final page, we’ll talk about what you should learn next.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

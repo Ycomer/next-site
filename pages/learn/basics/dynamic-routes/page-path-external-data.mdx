@@ -1,5 +1,5 @@
-import Layout from '../../../../components/learn/Layout';
-import Image from '../../../../components/image';
+import Layout from '../../../../components/learn/Layout'
+import Image from '../../../../components/image'
 
 export const meta = {
   title: 'Dynamic Routes',
@@ -7,7 +7,7 @@ export const meta = {
   lessonId: 'dynamic-routes',
   stepId: 'page-path-external-data',
   subtitle: 'Page Path Depends on External Data'
-};
+}
 
 In the previous lesson, we covered the case where the **page content** depends on external data. We used `getStaticProps` to fetch required data to render the index page.
 
@@ -36,22 +36,20 @@ First, we’ll create a page called **`[id].js`** under `pages/posts`. Pages tha
 In `[id].js`, we’ll write code that will render a post page — just like other pages we’ve created.
 
 ```jsx
-import Layout from '../../components/Layout';
+import Layout from '../../components/Layout'
 
 export default function Post() {
-  return <Layout>...</Layout>;
+  return <Layout>...</Layout>
 }
-
-export default Post;
 ```
 
 Now, here’s what’s new: We’ll export an async function called `getStaticPaths` from this page. In this function, we need to return a list of **possible values** for `id`.
 
 ```jsx
-import Layout from '../../components/Layout';
+import Layout from '../../components/Layout'
 
 export default function Post() {
-  return <Layout>...</Layout>;
+  return <Layout>...</Layout>
 }
 
 export async function getStaticPaths() {
@@ -64,10 +62,10 @@ In our case, `id` can be `dps` or `pre-rendering`. So we need it to return an ar
 Finally, we need to implement `getStaticProps` again - this time, to fetch necessary data for the blog post with a given `id`. `getStaticProps` is given `params`, which contains `id`.
 
 ```jsx
-import Layout from '../../components/Layout';
+import Layout from '../../components/Layout'
 
 export default function Post() {
-  return <Layout>...</Layout>;
+  return <Layout>...</Layout>
 }
 
 export async function getStaticPaths() {
@@ -92,4 +90,4 @@ Here’s a graphic summary of what we just talked about:
 
 Let’s try this on the next page!
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
