@@ -36,20 +36,24 @@ If you’ve used `<a href="…">` instead of `<Link href="…">` and did this, t
 
 ### Code splitting and prefetching
 
-Next.js does code splitting automatically so each page only loads what’s necessary for that page. That means when the index page is rendered, the code for other pages are not served initially. This makes the index page load quickly.
+Next.js does code splitting automatically so each page only loads what’s necessary for that page. That means when the homepage is rendered, the code for other pages is not served initially.
 
-Furthermore, in a production build of Next.js, whenever `Link` components appear in the browser’s viewport, Next.js automatically **prefetches** the code for the linked page in the background. By the time you click the link, the destination page will already be loaded in the background, and the page transition will be instant!
+This ensures that the homepage page loads quickly even if you add hundreds of pages.
 
-You can check this by creating a preview or production deployment on [ZEIT Now](https://zeit.co/). By default, ZEIT Now runs `next build`, which creates an optimized, production build of Next.js.
+Only loading the code for the page you request also means that pages become isolated in that if a certain page throws the rest of the application still works.
+
+Furthermore, in a production build of Next.js, whenever `Link` components appear in the browser’s viewport, Next.js automatically **prefetches** the code for the linked page in the background. By the time you click the link, the code for the destination page will already be loaded in the background, and the page transition will be near-instant!
 
 ### Summary
 
-Next.js automatically optimizes your site for the best performance by code splitting, client-side navigation, and prefetching (in production). You just need to create routes as files under `pages` and use `Link`. You don’t need to install extra routing libraries.
+Next.js automatically optimizes your application for the best performance by code splitting, client-side navigation, and prefetching (in production).
 
-You can learn more about the `Link` component <Link href="/docs/[...slug]" as="/docs/api-reference/next/link"><a>here</a></Link> and routing in general <Link href="/docs/[...slug]" as="/docs/routing/introduction"><a>here</a></Link>.
+You create routes as files under `pages` and use the built-in `Link` component. No routing libraries are required.
+
+You can learn more about the `Link` component <Link href="/docs/[...slug]" as="/docs/api-reference/next/link"><a>in the API reference documentation</a></Link> and routing in general <Link href="/docs/[...slug]" as="/docs/routing/introduction"><a>in the routing documentation</a></Link>.
 
 > **Note:** If you need to link to an <em>external</em> page outside the Next.js app, just use an `<a>` tag without `Link`.
 >
-> If you need to add attributes like `className`, add it to the `a` tag, _not_ to the `Link` tag.
+> If you need to add attributes like, for example, `className`, add it to the `a` tag, _not_ to the `Link` tag.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
