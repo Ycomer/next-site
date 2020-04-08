@@ -12,33 +12,35 @@ export const meta = {
   <Logo size={80} />
 </p>
 
-**Next.js** is the React framework for building JavaScript applications. It’s used and loved by <Link href="/showcase"><a>the world’s leading companies</a></Link>.
+To build complete web applications with React many tools have to come together.
 
-In this tutorial, you’ll learn Next.js basics by creating a very simple **blog app**. Here’s an example of the final result:
+For example, code has to be bundled using a bundler like webpack and transformed using a compiler like Babel.
 
-**[https://next-learn-starter.now.sh](https://next-learn-starter.now.sh/)** ([source](https://github.com/zeit/next-learn-starter/tree/master/basics-final))
+There are many other pieces needed to make a successful application, such as code-splitting and production optimizations.
 
-By the time you complete all of this tutorial, you’ll understand:
+One of the most important parts is "Developer Experience": Ensuring you and your team have an amazing experience while writing code.
 
-- How to create and deploy a Next.js app to ZEIT Now
-- How to create pages and do client-side navigation
-- How to serve static assets, set metadata for each page, and use built-in CSS Modules support
-- How to statically generate pages that require fetching external data
-- How to create dynamic routes
-- How to create API routes
+For example through hot reloading, which are live updates as you make changes without having to reload the page.
 
-### What You’ll Learn in This First Lesson
+Furthermore, there are many strategies in which websites and applications are being built today, for example statically pre-rendering, server-rendering and client-side only rendering.
 
-In this first lesson, you will:
+All of these problems need very specific solutions.
 
-- Create a Next.js app and deploy it to production using [ZEIT Now](https://zeit.co).
-- Learn how to take advantage of Next.js’s hot reloading feature.
-- Learn the basics of the **DPS** workflow (**D**evelop, **P**review, **S**hip) by making some edits and creating a preview deployment before shipping to production.
+Next.js is the framework for React. It provides a solution to the mentioned problems, but most importantly it puts you and your team in the pit of success when building React applications.
 
-> This tutorial assumes basic knowledge of JavaScript and React. If you’ve never written a React component, you should go through [the official React tutorial](https://reactjs.org/tutorial/tutorial.html) first.
->
-> If you’re looking for the Next.js documentation instead, <Link href="/docs/[...slug]" as="/docs/getting-started"><a>click here</a></Link>.
+Next.js has many built-in features, a sample of them are:
 
-Let’s get started!
+- An intuitive page-based routing system (with support for dynamic routes)
+- Pre-rendering, both static generation (SSG) and server-rendering (SSR) are supported on a per-page basis
+- Automatic code splitting for faster page loads
+- Client-side routing with optimized prefetching
+- Built-in CSS and Sass support, and support for any CSS-in-JS library
+- Development environment which supports Hot Module Replacement
+- API routes to build API endpoints with serverless functions
+- Fully extendable
+
+Next.js is used in tens of thousands of production-facing websites and web applications. Including many of the world's largest brands.
+
+This interactive course will guide you through how to get started with Next.js and the main components and features for you to know about when building Next.js applications.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
