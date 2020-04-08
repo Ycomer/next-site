@@ -32,7 +32,7 @@ export default withPure(
     const isExternal = href && href.startsWith('http');
     const a = (
       <a
-        href={isExternal ? href : undefined}
+        href={href}
         className={classNames(className, 'fw4 no-drag', { invert, disabled })}
         role="button"
         tabIndex="0"
