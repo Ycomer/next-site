@@ -14,10 +14,6 @@ Here are some styling tips that might be helpful.
 
 > You can just **read through** the following sections. No need to make changes to our app!
 
-### Prefer CSS Modules over `styled-jsx`
-
-We recommend CSS Modules over `styled-jsx` because of performance. `styled-jsx` tags are inserted as React components, which takes a lot of time to initialize and render. Most of the work, particularly while using dynamic styles, is done at **runtime**, while CSS Modules are evaluated at **build time**.
-
 ### Using `classnames` library to toggle classes
 
 [`classnames`](https://github.com/JedWatson/classnames) is a simple library that lets you toggle class names easily. You can install it using `npm install classnames` or `yarn add classnames`.
@@ -66,25 +62,29 @@ To customize PostCSS config, you can create a top-level file called `postcss.con
 
 Here’s an example `postcss.config.js` for using [Tailwind CSS](https://tailwindcss.com/) with [`purgecss`](https://github.com/FullHuman/purgecss) which removes unused CSS.
 
-- You need to install `tailwindcss` and `@fullhuman/postcss-purgecss`.
+- You need to install `tailwindcss`, `@fullhuman/postcss-purgecss`, and `postcss-preset-env`.
 - You don’t need `autoprefixer` because Next.js includes it by default.
 
 ```js
 module.exports = {
   plugins: [
     'tailwindcss',
-    process.env.NODE_ENV === 'production'
+    ...(process.env.NODE_ENV === 'production'
       ? [
-          '@fullhuman/postcss-purgecss',
-          {
-            content: [
-              './pages/**/*.{js,jsx,ts,tsx}',
-              './components/**/*.{js,jsx,ts,tsx}'
-            ],
-            defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
-          }
+          [
+            '@fullhuman/postcss-purgecss',
+            {
+              content: [
+                './pages/**/*.{js,jsx,ts,tsx}',
+                './components/**/*.{js,jsx,ts,tsx}'
+              ],
+              defaultExtractor: content =>
+                content.match(/[\w-/:]+(?<!:)/g) || []
+            }
+          ]
         ]
-      : undefined
+      : []),
+    'postcss-preset-env'
   ]
 }
 ```
@@ -103,7 +103,6 @@ npm install sass
 
 ### That’s it for this lesson!
 
-- To learn more about CSS Modules, take a look at [its documentation](https://github.com/css-modules/css-modules).
-- To learn more about Next.js’s built-in CSS Support, check out <Link href="/docs/[...slug]" as="/docs/basic-features/built-in-css-support"><a>our documentation</a></Link>.
+To learn more about Next.js’s built-in CSS Support and CSS Modules, check out <Link href="/docs/[...slug]" as="/docs/basic-features/built-in-css-support"><a>our documentation</a></Link>.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -9,20 +9,21 @@ export const meta = {
   subtitle: 'Polishing Layout'
 }
 
-So far, we’ve only added minimal React and CSS code just to illustrate concepts such as CSS Modules. Before we move on to our next lesson (data fetching), let’s update our code to use more _polished_ React and CSS code.
+So far, we’ve only added minimal React and CSS code just to illustrate concepts such as CSS Modules. Before we move on to our next lesson (data fetching), let’s polish our page styling and code.
 
 ### Download Your Profile Picture
 
 First, we’ll be using your profile picture for the final design.
 
 - **Download** your profile picture from GitHub, Twitter, LinkedIn or elsewhere.
-- Create an `images` directory and save the picture as `profile.jpg`.
+- Create an `images` directory inside of the `public` directory.
+- Save the picture as `profile.jpg` in the `public/images` directory.
 - The image size can be around 300px by 300px.
 - You may remove `public/zeit.svg`.
 
-### Update `components/Layout.module.css`
+### Update `components/layout.module.css`
 
-Second, we’ll use the following for `components/Layout.module.css` — simply copy and paste it. It adds some more polished styles.
+Second, we’ll use the following for `components/layout.module.css` — simply copy and paste it. It adds some more polished styles.
 
 ```css
 .container {
@@ -54,7 +55,9 @@ Second, we’ll use the following for `components/Layout.module.css` — simply 
 
 ### Create `styles/utils.module.css`
 
-Third, let’s create a set of utility CSS classes for typography and others that will be useful across multiple components. Let’s add it as a CSS Module at `styles/utils.module.css`.
+Third, let’s create a set of utility CSS classes for typography and others that will be useful across multiple components.
+
+Let’s add it as a CSS Module at `styles/utils.module.css`.
 
 ```css
 .heading2Xl {
@@ -111,9 +114,9 @@ Third, let’s create a set of utility CSS classes for typography and others tha
 }
 ```
 
-### Update `components/Layout.js`
+### Update `components/layout.js`
 
-Fourth, copy the following code to `components/Layout.js` and **change** `Your Name` at the top to your name. Here’s what’s new:
+Fourth, copy the following code to `components/layout.js` and **change** `Your Name` at the top to your name. Here’s what’s new:
 
 - `meta` tags (like `og:image`)
 - Boolean `home` prop which will adjust the size of the title and the image
@@ -121,7 +124,7 @@ Fourth, copy the following code to `components/Layout.js` and **change** `Your N
 
 ```jsx
 import Head from 'next/head'
-import styles from './Layout.module.css'
+import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
@@ -188,7 +191,9 @@ export default function Layout({ children, home }) {
 
 ### Update `pages/index.js`
 
-Finally, update `pages/index.js` as follows:
+Finally, let's update the homepage.
+
+Change `pages/index.js` as follows:
 
 ```jsx
 import Head from 'next/head'
