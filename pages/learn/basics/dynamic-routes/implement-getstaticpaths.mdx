@@ -42,10 +42,10 @@ export function getAllPostIds() {
 **Important**: The returned list is _not_ just an array of strings — it **must** be an array of objects that like below. Each object must have the `params` key and contain an object with the `id` key (because we’re using `[id]` in the file name).
 
 ```js
-;[
+return [
   {
     params: {
-      id: 'dps'
+      id: 'ssg-ssr'
     }
   },
   {

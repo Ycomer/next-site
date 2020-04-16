@@ -68,7 +68,7 @@ Dynamic routes can be extended to catch all paths by adding three dots (`...`) i
 If you do this, in `getStaticPaths`, you must return an array as the value of the `id` key like so:
 
 ```js
-;[
+return [
   {
     params: {
       // Statically Generates /posts/a/b/c
