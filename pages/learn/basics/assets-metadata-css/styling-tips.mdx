@@ -23,7 +23,7 @@ Please take a look at its [README](https://github.com/JedWatson/classnames) for 
 - Suppose that you want to create an `Alert` component which accepts `type`, which can be `'success'` or `'error'`.
 - If it’s `'success'`, you want the text color to be green. If it’s `'error'`, you want the text color to be red.
 
-You can first write a CSS module (e.g. `Alert.module.css`) like this:
+You can first write a CSS module (e.g. `alert.module.css`) like this:
 
 ```css
 .success {
@@ -37,7 +37,7 @@ You can first write a CSS module (e.g. `Alert.module.css`) like this:
 And use `classnames` like this:
 
 ```jsx
-import styles from './Alert.module.css'
+import styles from './alert.module.css'
 import cn from 'classnames'
 
 export default function Alert({ type }) {
