@@ -98,6 +98,14 @@ const Code = ({ children }) => (
       pre code::after {
         content: '';
       }
+      /* Allow selecting all text for easy copy-pasting.
+         Right now, only enable it for CSS / Markdown because
+         for bash / JS code, you might not want to copy
+         all the lines in a snippet. */
+      :global(.language-css) pre,
+      :global(.language-md) pre {
+        user-select: all;
+      }
     `}</style>
   </pre>
 );
