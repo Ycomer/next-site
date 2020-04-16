@@ -1,9 +1,7 @@
 import Link from 'next/link';
-
+import { TWITTER_USER_NAME } from '../lib/constants';
 import Container from './container';
 import withPure from './hoc/pure';
-
-import { links } from '../site-manifest';
 
 import ZEITLogo from './icons/zeit-black-full-logo';
 
@@ -125,7 +123,11 @@ export default withPure(() => (
               </a>
             </p>
             <p>
-              <a href="https://twitter.com/zeithq" rel="noopener noreferrer" target="_blank">
+              <a
+                href={`https://twitter.com/${TWITTER_USER_NAME}`}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 Twitter
               </a>
             </p>
