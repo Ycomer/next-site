@@ -2,7 +2,7 @@ import Layout from '../../../../components/learn/Layout'
 import Link from 'next/link'
 import { PLATFORM_NAME } from '../../../../lib/constants'
 import PlatformLink from '../../../../components/learn/platform-link'
-import PlataformText from '../../../../components/learn/platform-text'
+import PlatformText from '../../../../components/learn/platform-text'
 
 export const meta = {
   title: 'Deploying Your Next.js App',
@@ -14,20 +14,20 @@ export const meta = {
 
 The easiest way to deploy Next.js to production is to use the **<PlatformLink />** platform developed by the creators of Next.js.
 
-&#8203;<PlataformText /> is an all-in-one platform with Global CDN supporting static & JAMstack deployment and Serverless Functions. We believe <PlataformText /> is the optimal place to deploy Next.js apps. You can start using it for _free_ — no credit card required.
+&#8203;<PlatformText /> is an all-in-one platform with Global CDN supporting static & JAMstack deployment and Serverless Functions. We believe <PlatformText /> is the optimal place to deploy Next.js apps. You can start using it for _free_ — no credit card required.
 
-### Create a <PlataformText /> Account
+### Create a <PlatformText /> Account
 
-First, go to <PlatformLink href="/signup" /> to create a <PlataformText /> account. Choose **Continue with GitHub** and go through the sign up process.
+First, go to <PlatformLink href="/signup" /> to create a <PlatformText /> account. Choose **Continue with GitHub** and go through the sign up process.
 
 ### Import your `nextjs-blog` repository
 
-Once you’re signed up, **import** your `nextjs-blog` repository on <PlataformText />. You can do so from here: <PlatformLink href="/import/git" />.
+Once you’re signed up, **import** your `nextjs-blog` repository on <PlatformText />. You can do so from here: <PlatformLink href="/import/git" />.
 
 - You’ll need to **Install Now for GitHub**. You can give access to **All Repositories**.
 - Once you’ve installed Now, import `nextjs-blog`.
 
-You can use _default values_ for the following settings — no need to change anything. <PlataformText /> automatically detects that you have a Next.js app and chooses optimal build settings for you.
+You can use _default values_ for the following settings — no need to change anything. <PlatformText /> automatically detects that you have a Next.js app and chooses optimal build settings for you.
 
 - Project Name
 - Root Directory
@@ -39,20 +39,8 @@ When you deploy, your Next.js app will start building. It should finish in under
 
 > **Help is available**: If your deployment fails, you can always get help on [GitHub Discussions](https://github.com/zeit/next.js/discussions). To learn more about deployment,
 
-When it’s done, you’ll get deployment URLs ending with `now.sh`. Click on the URL that looks like below — this is the **production domain** assigned to your app:
+When it’s done, you’ll get **deployment URLs**. Click on one of the URLs and you should see the Next.js starter page live.
 
-`nextjs-blog.<username>.now.sh`
-
-…and you should see the Next.js starter page live.
-
-Congratulations! You just deployed your Next.js app to production.
-
-Before we finish, let’s talk about:
-
-- What actually happens behind the scenes when you deploy to <PlataformText />
-- The **DPS** workflow: **D**evelop, **P**review, and **S**hip
-- Other hosting options
-
-…on the next page.
+Congratulations! You just deployed your Next.js app to production. On the next page, we’ll go into the details of <PlatformText /> and the recommended workflow.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
