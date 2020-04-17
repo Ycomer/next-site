@@ -11,9 +11,9 @@ export const meta = {
   subtitle: 'Metadata'
 }
 
-What if we wanted to modify the metadata of the page, such as the `<title>` HTML tag.
+What if we wanted to modify the metadata of the page, such as the `<title>` HTML tag?
 
-`<title>` is part of the `<head>` HTML tag of a page. Let's dive into how we can modify the `<head>` of pages.
+`<title>` is part of the `<head>` HTML tag, so let's dive into how we can modify the `<head>` tag in a Next.js page.
 
 Open `pages/index.js` in your editor and take a look at the following lines:
 
@@ -24,15 +24,13 @@ Open `pages/index.js` in your editor and take a look at the following lines:
 </Head>
 ```
 
-Notice that `<Head>` is used instead of the lowercase `<head>`.
-
-`<Head>` is a React Component that is built into Next.js. It allows you to modify the `<head>` of a page.
+Notice that `<Head>` is used instead of the lowercase `<head>`. `<Head>` is a React Component that is built into Next.js. It allows you to modify the `<head>` of a page.
 
 You can import the `Head` component from the `next/head` module.
 
 ### Adding `<Head>` to `first-page.js`
 
-We haven't added a `<title>` to our `/posts-first-page` route. Let's add one.
+We haven't added a `<title>` to our `/posts/first-page` route. Let's add one.
 
 Open the `pages/posts/first-page.js` file.
 
