@@ -12,23 +12,20 @@ export const meta = {
   <Logo size={80} />
 </p>
 
-To build complete web applications with React many tools have to come together.
+To build a complete web application with React from scratch, you need to solve many non-trivial problems:
 
-For example, code has to be bundled using a bundler like webpack and transformed using a compiler like Babel.
+- Code has to be bundled using a bundler like webpack and transformed using a compiler like Babel.
+- You need to do production optimizations such as code splitting.
+- You might want to statically pre-render some pages for performance and SEO. For other pages, you might want to use server-side rendering or client-side rendering.
+- You might want to write some server-side code to connect your React app to your data store.
 
-There are many other pieces needed to make a successful application, such as code-splitting and production optimizations.
+A _framework_ can solve these problems. But such a framework must have the right level of abstraction — otherwise it’ll be too basic or too complicated to be useful. It also needs to have great "Developer Experience", ensuring you and your team have an amazing experience while writing code.
 
-One of the most important parts is "Developer Experience": Ensuring you and your team have an amazing experience while writing code.
+### Next.js: The React Framework
 
-For example through hot reloading, which are live updates as you make changes without having to reload the page.
+Enter **Next.js**, The React Framework. Next.js provides a solution to all of the above problems. But more importantly, it puts you and your team in the pit of success when building React applications.
 
-Furthermore, there are many strategies in which websites and applications are being built today, for example statically pre-rendering, server-rendering and client-side only rendering.
-
-All of these problems need very specific solutions.
-
-Next.js is the framework for React. It provides a solution to the mentioned problems, but most importantly it puts you and your team in the pit of success when building React applications.
-
-Next.js has many built-in features, a sample of them are:
+Next.js has the best-in-class "Developer Experience" and many built-in features; a sample of them are:
 
 - An intuitive page-based routing system (with support for dynamic routes)
 - Pre-rendering, both static generation (SSG) and server-rendering (SSR) are supported on a per-page basis
@@ -36,11 +33,23 @@ Next.js has many built-in features, a sample of them are:
 - Client-side routing with optimized prefetching
 - Built-in CSS and Sass support, and support for any CSS-in-JS library
 - Development environment which supports Hot Module Replacement
-- API routes to build API endpoints with serverless functions
+- API routes to build API endpoints with Serverless Functions
 - Fully extendable
 
-Next.js is used in tens of thousands of production-facing websites and web applications. Including many of the world's largest brands.
+Next.js is used in tens of thousands of production-facing websites and web applications, including many of the world's largest brands.
 
-This free interactive course will guide you through how to get started with Next.js and the main components and features for you to know about when building Next.js applications.
+### About This Tutorial
+
+This free interactive course will guide you through how to get started with Next.js.
+
+In this tutorial, you’ll learn Next.js basics by creating a very simple **blog app**. Here’s an example of the final result:
+
+**[https://next-learn-starter.now.sh](https://next-learn-starter.now.sh/)** ([source](https://github.com/zeit/next-learn-starter/tree/master/basics-final))
+
+Let’s get started!
+
+> This tutorial assumes basic knowledge of JavaScript and React. If you’ve never written React code, you should go through [the official React tutorial](https://reactjs.org/tutorial/tutorial.html) first.
+>
+> If you’re looking for the Next.js documentation instead, <Link href="/docs/[...slug]" as="/docs/getting-started"><a>click here</a></Link>.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
