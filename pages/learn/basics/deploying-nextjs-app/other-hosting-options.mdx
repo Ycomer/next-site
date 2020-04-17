@@ -10,7 +10,7 @@ export const meta = {
 
 Next.js can be deployed to any hosting provider that supports Node.js.
 
-If you’ve followed the instructions so far, your `package.json` should have `"build"` and `"start"` scripts:
+If you’ve followed the instructions so far, your `package.json` should have `build` and `start` scripts:
 
 ```json
 {
@@ -34,8 +34,8 @@ After building, the `start` script a Node.js server that supports hybrid pages, 
 npm run start
 ```
 
-> **Tip**: You can customize the `start` script in `package.json` to accept a `PORT` parameter by doing: `"start": "next start -p $PORT"`.
+> **Tip**: You can customize the `start` script in `package.json` to accept a `PORT` parameter by updating it as: `"start": "next start -p $PORT"`.
 
-That’s it! If you have questions about self-hosting Next.js, you can ask our community on [GitHub Discussions](https://github.com/zeit/next.js/discussions).
+That’s it! If you have questions about deploying Next.js, you can ask our community on [GitHub Discussions](https://github.com/zeit/next.js/discussions).
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
