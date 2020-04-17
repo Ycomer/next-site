@@ -68,7 +68,7 @@ const basicsLessonsRedirect = [].concat(
     ['dynamic-routing', 'dynamic-routes'],
     ['fetching-data-for-pages', 'data-fetching'],
     ['styling-components', 'assets-metadata-css'],
-    ['deploying-a-nextjs-app', 'create-nextjs-app']
+    ['deploying-a-nextjs-app', 'deploying-nextjs-app']
   ].map(([before, after]) => [
     {
       source: `/learn/basics/${before}{/}?`,
