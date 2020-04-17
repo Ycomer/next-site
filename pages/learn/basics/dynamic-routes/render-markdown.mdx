@@ -9,7 +9,7 @@ export const meta = {
   subtitle: 'Render Markdown'
 }
 
-To render markdown content, we’ll use the `remark` library:
+To render markdown content, we’ll use the `remark` library. First, let’s install it:
 
 ```bash
 npm install remark remark-html
@@ -47,7 +47,7 @@ export async function getPostData(id) {
 }
 ```
 
-Note that we changed `getPostData` to `async` because we need to use `await` for `remark`.
+**Important**: We added the **`async`** keyword to `getPostData` because we need to use `await` for `remark`.
 
 That means we need to update `getStaticProps` to use `await` when calling `getPostData`:
 

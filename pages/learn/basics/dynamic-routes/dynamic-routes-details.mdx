@@ -25,7 +25,7 @@ But here are some essential information you should know about dynamic routes.
 Like `getStaticProps`, `getStaticPaths` can fetch data from any data source. In our example, `getAllPostIds` (which is used by `getStaticPaths`) may fetch from an external API endpoint:
 
 ```js
-export function getAllPostIds() {
+export async function getAllPostIds() {
   // Instead of the file system,
   // fetch post data from an external API endpoint
   const posts = await fetch('..')
@@ -57,7 +57,7 @@ If `fallback` is `true`, then the behavior of `getStaticProps` changes:
 - The paths that have not been generated at build time will **not** result in a 404 page. Instead, Next.js will serve a “fallback” version of the page on the first request to such a path (see [“Fallback pages”](#fallback-pages) below for details).
 - In the background, Next.js will statically generate the requested path. Subsequent requests to the same path will serve the generated page, just like other pages pre-rendered at build time.
 
-This is out of the scope of our lessons, but you can learn more about `fallback: true` on <Link href="/docs/[...slug]" as="/docs/basic-features/data-fetching#fallback-pages"><a>our documentation</a></Link>.
+This is beyond the scope of our lessons, but you can learn more about `fallback: true` on <Link href="/docs/[...slug]" as="/docs/basic-features/data-fetching#fallback-pages"><a>our documentation</a></Link>.
 
 ### Catch-all Routes
 
@@ -95,7 +95,7 @@ If you want to access the Next.js router, you can do so by importing the `useRou
 
 ### 404 Pages
 
-To create a custom 404 page you can create a `pages/404.js` file. This file is statically generated at build time.
+To create a custom 404 page, create `pages/404.js`. This file is statically generated at build time.
 
 ```jsx
 // pages/404.js
