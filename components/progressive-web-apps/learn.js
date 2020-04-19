@@ -22,7 +22,7 @@ export default () => (
       </div>
 
       <div>
-        <Button invert href="/learn/basics/getting-started">
+        <Button invert href="/learn/basics/create-nextjs-app">
           Learn Next.js
         </Button>
       </div>

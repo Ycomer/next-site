@@ -13,7 +13,7 @@ export default function Learn() {
         title="Learn Next.js"
         description="Tutorials, examples and quizzes. Learn Next.js step-by-step and earn points ✨."
       />
-      <Link href="/learn/basics/getting-started">
+      <Link href="/learn/basics/create-nextjs-app">
         <a title="Get started learning Next.js">
           <Image
             alt="Learn page overview"
@@ -26,7 +26,7 @@ export default function Learn() {
         </a>
       </Link>
       <div>
-        <Button href="/learn/basics/getting-started" invert>
+        <Button href="/learn/basics/create-nextjs-app" invert>
           Get Started
         </Button>
       </div>
