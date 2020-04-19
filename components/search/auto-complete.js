@@ -182,7 +182,7 @@ function AutoComplete({
         }
         .react-autosuggest__suggestions-container {
           display: none;
-          /* Full page - content margin - header size - ZEIT banner - search input container height and its margin */
+          /* Full page - content margin - header size - logo banner - search input container height and its margin */
           max-height: calc(100vh - 2rem - 81px - 50px - 5.5rem);
           overflow-y: auto;
           padding-bottom: 1.5rem;

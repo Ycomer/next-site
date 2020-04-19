@@ -1,3 +1,6 @@
+import PlatformLink from '../../components/name/platform-link';
+import OrgLink from '../../components/name/org-link';
+
 ## How to use
 
 ### Setup
@@ -258,10 +261,10 @@ For example, `/post/abc?pid=bcd` will have the `query` object: `{ pid: 'abc' }`.
 > After hydration, Next.js will trigger an update to your application to provide the route parameters in the `query` object.
 > If your application cannot tolerate this behavior, you can opt-out of static optimization by capturing the query parameter in `getInitialProps`.
 
-> **Note**: If deploying to [ZEIT Now](https://zeit.co/now) dynamic routes will work out-of-the-box.
+> **Note**: If deploying to <PlatformLink /> dynamic routes will work out-of-the-box.
 > You do not need to configure custom routes in a `now.json` file.
 >
-> If you are new to ZEIT Now, you can learn how to deploy a Next.js app to it in the [_Deploying a Next.js App_ Learn section](https://nextjs.org/learn/basics/deploying-a-nextjs-app).
+> If you are new to <PlatformLink />, you can learn how to deploy a Next.js app to it in the [_Deploying a Next.js App_ Learn section](https://nextjs.org/learn/basics/deploying-a-nextjs-app).
 
 ### Populating `<head>`
 
@@ -2144,7 +2147,7 @@ next build
 next start
 ```
 
-To deploy Next.js with [ZEIT Now](https://zeit.co/now) see the [ZEIT Guide for Deploying Next.js](https://zeit.co/guides/deploying-nextjs-with-now/) or the [Next.js Learn section about deploying on ZEIT Now](https://nextjs.org/learn/basics/deploying-a-nextjs-app/deploying-to-zeit-now).
+To deploy Next.js with <PlatformLink /> see [our guide for Deploying Next.js](https://zeit.co/guides/deploying-nextjs-with-now/) or the [Next.js Learn section about deploying](https://nextjs.org/learn/basics/deploying-a-nextjs-app/deploying-to-zeit-now).
 
 Next.js can be deployed to other hosting solutions too. Please have a look at the ['Deployment'](https://github.com/zeit/next.js/wiki/Deployment) section of the wiki.
 
@@ -2218,7 +2221,7 @@ export function render(req: http.IncomingMessage, res: http.ServerResponse) => v
 The static HTML files are ready to be served as-is.
 You can read more about this feature, including how to opt-out, in the [Automatic Static Optimization section](#automatic-static-optimization).
 
-Using the serverless target, you can deploy Next.js to [ZEIT Now](https://zeit.co/now) with all of the benefits and added ease of control like for example; [custom routes](https://zeit.co/guides/custom-next-js-server-to-routes/) and caching headers. See the [ZEIT Guide for Deploying Next.js with Now](https://zeit.co/guides/deploying-nextjs-with-now/) for more information.
+Using the serverless target, you can deploy Next.js to <PlatformLink /> with all of the benefits and added ease of control like for example; [custom routes](https://zeit.co/guides/custom-next-js-server-to-routes/) and caching headers. See [our guide for Deploying Next.js](https://zeit.co/guides/deploying-nextjs-with-now/) for more information.
 
 #### One Level Lower
 
@@ -2572,7 +2575,7 @@ Then you have a static version of your app in the `out` directory.
 
 Now you can deploy the `out` directory to any static hosting service. Note that there is an additional step for deploying to GitHub Pages, [documented here](https://github.com/zeit/next.js/wiki/Deploying-a-Next.js-app-into-GitHub-Pages).
 
-For an example, simply visit the `out` directory and run following command to deploy your app to [ZEIT Now](https://zeit.co/now).
+For an example, simply visit the `out` directory and run following command to deploy your app to <PlatformLink />.
 
 ```bash
 now
@@ -2639,7 +2642,7 @@ You can use [now dev](https://zeit.co/docs/v2/development/basics) as your local 
 }
 ```
 
-For the production deployment, you can use the same configuration and run `now` to do the deployment with [ZEIT Now](https://zeit.co/now). Otherwise you can also configure a proxy server to route using a set of routes like the ones above, e.g deploy the docs app to `https://docs.example.com` and the home app to `https://home.example.com` and then add a proxy server for both apps in `https://example.com`.
+For the production deployment, you can use the same configuration and run `now` to do the deployment with <PlatformLink />. Otherwise you can also configure a proxy server to route using a set of routes like the ones above, e.g deploy the docs app to `https://docs.example.com` and the home app to `https://home.example.com` and then add a proxy server for both apps in `https://example.com`.
 
 ## FAQ
 
@@ -2775,9 +2778,9 @@ Please see our [contributing.md](https://github.com/zeit/next.js/tree/canary/con
 
 ## Authors
 
-- Arunoda Susiripala ([@arunoda](https://twitter.com/arunoda)) – [ZEIT](https://zeit.co)
-- Tim Neutkens ([@timneutkens](https://twitter.com/timneutkens)) – [ZEIT](https://zeit.co)
-- Naoyuki Kanezawa ([@nkzawa](https://twitter.com/nkzawa)) – [ZEIT](https://zeit.co)
-- Tony Kovanen ([@tonykovanen](https://twitter.com/tonykovanen)) – [ZEIT](https://zeit.co)
-- Guillermo Rauch ([@rauchg](https://twitter.com/rauchg)) – [ZEIT](https://zeit.co)
+- Arunoda Susiripala ([@arunoda](https://twitter.com/arunoda)) – <OrgLink />
+- Tim Neutkens ([@timneutkens](https://twitter.com/timneutkens)) – <OrgLink />
+- Naoyuki Kanezawa ([@nkzawa](https://twitter.com/nkzawa)) – <OrgLink />
+- Tony Kovanen ([@tonykovanen](https://twitter.com/tonykovanen)) – <OrgLink />
+- Guillermo Rauch ([@rauchg](https://twitter.com/rauchg)) – <OrgLink />
 - Dan Zajdband ([@impronunciable](https://twitter.com/impronunciable)) – Knight-Mozilla / Coral Project

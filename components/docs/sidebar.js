@@ -226,7 +226,7 @@ export default function Sidebar({ headings, mobile, desktop }) {
           position: sticky;
           /* header height + notification height */
           top: calc(81px + 88px);
-          /* Full page - header height - notification height - ZEIT banner */
+          /* Full page - header height - notification height - logo banner */
           height: calc(100vh - 81px - 88px - 50px);
           overflow-y: auto;
           -webkit-overflow-scrolling: touch;

@@ -11,6 +11,7 @@ import SectionHeader from '../../components/section-header'
 
 import Preview from '../../components/blog/preview'
 import { components } from '../../components/blog/post-components'
+import { ORG_NAME } from '../../lib/constants'
 
 function importAll(r) {
   return r.keys().map(r)
@@ -62,7 +63,15 @@ export default () => (
     <Page title="Blog | Next.js">
       <Screen offset={64 + 400}>
         <Container padding wide>
-          <SectionHeader title="Blog" />
+          <SectionHeader
+            title="Blog"
+            description={
+              <span>
+                The latest news about Next.js <br className="display-mobile" />
+                from the {ORG_NAME} team
+              </span>
+            }
+          />
           <SkipNavContent />
           {items}
         </Container>
