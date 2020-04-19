@@ -1,5 +1,5 @@
 import { PLATFORM_NAME } from '../../lib/constants';
 
-export default function PlataformText() {
+export default function PlatformText() {
   return PLATFORM_NAME;
 }
